@@ -367,3 +367,109 @@ Hyperparameters are parameters that affect the performance of a model but are no
 ## Summary
 
 To achieve a well-trained model, it is essential to carefully tune these hyperparameters. The right combination can significantly enhance the model's performance and generalization ability. Often, finding the best hyperparameters involves experimentation and validation to determine the most effective configuration for the specific task and dataset.
+
+
+# Can you explain the parameter sharing concept in deep learning?
+
+Parameter sharing is the method of sharing weights by all neurons in a particular feature map. Therefore helps to reduce the number of parameters in the whole system, making it computationally cheap. It basically means that the same parameters will be used to represent different transformations in the system. This basically means the same matrix elements may be updated multiple times during backpropagation from varied gradients. The same set of elements will facilitate transformations at more than one layer instead of those from a single layer as conventional. This is usually done in architectures like Siamese that tend to have parallel trunks trained simultaneously. In that case, using shared weights in a few layers( usually the bottom layers) helps the model converge better. This behavior, as observed, can be attributed to more diverse feature representations learned by the system. Since neurons corresponding to the same features are triggered in varied scenarios. Helps to model to generalize better.
+
+Note that sometimes the parameter sharing assumption may not make sense. This is especially the case when the input images to a ConvNet have some specific centered structure, where we should expect, for example, that completely different features should be learned on one side of the image than another.
+
+One practical example is when the input is faces that have been centered in the image. You might expect that different eye-specific or hair-specific features could (and should) be learned in different spatial locations. In that case, it is common to relax the parameter sharing scheme, and instead, simply call the layer a Locally-Connected Layer.
+
+
+# Describe the architecture of a typical Convolutional Neural Network (CNN)?
+![Alt text](<images/image copy 4.png>)
+
+https://www.youtube.com/watch?v=K_BHmztRTpA&ab_channel=Packt
+
+## Architecture of a Typical Convolutional Neural Network (CNN)
+
+A Convolutional Neural Network (CNN) is a type of deep learning model particularly effective for analyzing visual data(Images/Videos etc).Typically accepts 2D input image. Shared weights within a kernel sliding over input.CNNs are designed to automatically and adaptively learn spatial hierarchies of features through backpropagation by using multiple building blocks, such as convolution layers, pooling layers, and fully connected (dense) layers. Here is a description of the architecture of a typical CNN:
+
+### 1. Input Layer
+- The input layer holds the raw pixel values of the image. For example, a colored image of size 32x32 pixels with 3 color channels (RGB) would have dimensions 32x32x3.
+
+### 2. Convolutional Layer
+- **Convolution Operation**: This layer applies a set of convolutional filters (kernels) to the input image. Each filter moves (or convolves) across the input image, performing element-wise multiplications and summing the results to produce a feature map.
+- **Receptive Field**: The size of the filter (e.g., 3x3, 5x5) determines the receptive field or the region of the input image the filter looks at each time.
+- **Stride**: The number of pixels the filter moves at each step. A stride of 1 means the filter moves one pixel at a time, while a stride of 2 means it moves two pixels at a time.
+- **Padding**: To control the spatial dimensions of the output feature map, padding (e.g., zero-padding) may be used to add extra pixels around the borders of the input.
+
+### 3. Activation Layer
+- After the convolution operation, an activation function (typically ReLU - Rectified Linear Unit) is applied element-wise. ReLU introduces non-linearity into the model, enabling it to learn complex patterns.
+
+### 4. Pooling Layer
+- **Pooling Operation**: This layer performs a down-sampling operation along the spatial dimensions (width, height), reducing the dimensions of the feature map and the number of parameters, and thereby controlling overfitting.
+- **Max Pooling**: The most common type of pooling, which takes the maximum value in each patch of the feature map.
+- **Average Pooling**: Takes the average value in each patch.
+- **Stride and Pool Size**: Similar to convolution, pooling layers use a window (e.g., 2x2) and stride to slide across the feature map.
+
+### 5. Fully Connected (Dense) Layer
+- **Flattening**: The output feature maps from the last convolutional or pooling layer are flattened into a single vector.
+- **Dense Layer**: Each neuron in a fully connected layer is connected to every neuron in the previous layer. These layers perform high-level reasoning and classification based on the features extracted by the convolutional layers.
+- **Activation Function**: Typically, ReLU is used for hidden layers, and softmax is used in the final output layer for multi-class classification problems to produce a probability distribution.
+
+### 6. Output Layer
+- The final dense layer's size is equal to the number of classes in the classification task. For example, in a digit recognition task with digits 0-9, there would be 10 neurons.
+- **Softmax Activation**: Converts the logits (raw output values) into probabilities, where each value is between 0 and 1, and the sum of all probabilities is 1.
+
+### Example Architecture
+Here is a simple example of a CNN architecture for an image classification task:
+
+1. **Input Layer**: 32x32x3
+2. **Convolutional Layer 1**: 32 filters of size 3x3, stride 1, padding 'same'
+3. **Activation Layer**: ReLU
+4. **Pooling Layer 1**: Max pooling with 2x2 window, stride 2
+5. **Convolutional Layer 2**: 64 filters of size 3x3, stride 1, padding 'same'
+6. **Activation Layer**: ReLU
+7. **Pooling Layer 2**: Max pooling with 2x2 window, stride 2
+8. **Flattening**: Converts the 2D matrix into a vector
+9. **Fully Connected Layer 1**: 128 neurons, ReLU activation
+10. **Dropout Layer**: Dropout rate of 0.5 (optional, to prevent overfitting)
+11. **Fully Connected Layer 2**: 10 neurons (for 10 classes), softmax activation
+
+This architecture captures key components of a CNN and demonstrates how convolutional layers, pooling layers, and fully connected layers are combined to form a deep learning model capable of processing and classifying images.
+
+
+
+# What is the Vanishing Gradient Problem in Artificial Neural Networks and How to fix it?
+The Vanishing Gradient Problem is a significant issue in training deep artificial neural networks, where the gradients of the loss function with respect to the weights diminish as they are propagated back through the network. This problem can severely hinder the training process because the weights in the earlier layers of the network get updated very slowly, if at all, making it difficult for the network to learn effectively.
+
+Causes of the Vanishing Gradient Problem
+* Activation Functions: Certain activation functions like the sigmoid and tanh can squash their inputs into a very small output range, which leads to very small gradients during backpropagation.
+* Deep Networks: In deep networks, the gradient is propagated through many layers, and the repeated multiplication of small numbers can result in gradients that become exponentially smaller.
+
+Consequences
+* Slow Learning: The layers close to the input learn very slowly because the gradients are too small to make significant updates.
+* Poor Performance: The network may not learn effectively, leading to poor performance on the task at hand.
+* Training Instability: Training may become unstable and not converge.
+
+Activation Functions
+ReLU (Rectified Linear Unit): The ReLU activation function helps mitigate the vanishing gradient problem by not saturating for positive inputs. Its derivative is either 0 (for negative inputs) or 1 (for positive inputs), which helps maintain larger gradients.
+def relu(x):
+    return max(0, x)
+
+* Variants of ReLU: Leaky ReLU, Parametric ReLU, and Exponential Linear Unit (ELU) are other variations that attempt to fix issues like dying ReLUs, where neurons output zero for all inputs.
+
+Some ways to fix it are:
+
+Use skip/residual connections.
+Using ReLU or Leaky ReLU over sigmoid and tanh activation functions.
+Use models that help propagate gradients to earlier time steps like in GRUs and LSTMs.
+
+
+# When it comes to training an artificial neural network, what could be the reason why the loss doesn't decrease in a few epochs?
+Some of the reasons why the loss doesn't decrease after a few Epochs are:
+
+a) The model is under-fitting the training data.
+
+b) The learning rate of the model is large.
+
+c) The initialization is not proper (like all the weights initialized with 0 doesn't make the network learn any function)
+
+d) The Regularisation hyper-parameter is quite large.
+
+e). The classic case of vanishing gradients
+
+# Why Sigmoid or Tanh is not preferred to be used as the activation function in the hidden layer of the neural network?
