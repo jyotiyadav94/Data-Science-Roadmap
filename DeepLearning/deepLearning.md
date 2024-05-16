@@ -286,3 +286,84 @@ Overfitting occurs when a deep neural network performs well on training data but
    - Adjust the learning rate during training. Starting with a higher learning rate and gradually decreasing it can help the model converge more effectively without overfitting.
 
 By implementing these strategies, you can reduce overfitting and improve the generalization performance of your deep neural network.
+
+# Why should we use Batch Normalization?
+Batch normalization is a technique for training very deep neural networks that standardizes the inputs to a layer for each mini-batch.
+
+Usually, a dataset is fed into the network in the form of batches where the distribution of the data differs for every batch size. By doing this, there might be chances of vanishing gradient or exploding gradient when it tries to backpropagate. In order to combat these issues, we can use BN (with irreducible error) layer mostly on the inputs to the layer before the activation function in the previous layer and after fully connected layers.
+
+Batch Normalisation has the following effects on the Neural Network:
+
+* Robust Training of the deeper layers of the network.
+* Better covariate-shift proof NN Architecture.
+* Has a slight regularisation effect.
+* Centred and Controlled values of Activation.
+* Tries to Prevent exploding/vanishing gradient.
+* Faster Training/Convergence to the minimum loss function
+
+![Alt text](<images/image copy 4.png>)
+
+# How to know whether your model is suffering from the problem of Exploding Gradients?
+By taking incremental steps towards the minimal value, the gradient descent algorithm aims to minimize the error. The weights and biases in a neural network are updated using these processes. However, at times, the steps grow excessively large, resulting in increased updates to weights and bias terms to the point where the weights overflow (or become NaN, that is, Not a Number). An exploding gradient is the result of this, and it is an unstable method.
+
+There are some subtle signs that you may be suffering from exploding gradients during the training of your network, such as:
+
+The model is unable to get traction on your training data (e g. poor loss).
+The model is unstable, resulting in large changes in loss from update to update.
+The model loss goes to NaN during training.
+If you have these types of problems, you can dig deeper to see if you have a problem with exploding gradients. There are some less subtle signs that you can use to confirm that you have exploding gradients:
+
+The model weights quickly become very large during training.
+The model weights go to NaN values during training.
+The error gradient values are consistently above 1.0 for each node and layer during training.
+
+# Can you name and explain a few hyperparameters used for training a neural network?
+
+### Understanding Hyperparameters in Neural Networks
+
+Hyperparameters are parameters that affect the performance of a model but are not learned from the data during training. Instead, they are set manually by the user before the training process begins. These parameters influence the training process and the structure of the model.
+
+###  Key Hyperparameters
+
+1. **Number of Nodes**
+   - Refers to the number of neurons or units in each layer of the neural network. The choice of the number of nodes can affect the model's capacity to learn complex patterns. Too few nodes might lead to underfitting, while too many might lead to overfitting.
+
+2. **Batch Normalization**
+   - Batch normalization is a technique to normalize the inputs of each layer to have a mean of zero and a standard deviation of one. This helps stabilize and accelerate training by reducing internal covariate shift and making the network less sensitive to initialization.
+
+3. **Learning Rate**
+   - The learning rate determines the size of the steps the optimization algorithm takes when updating the weights during training. A small learning rate can make training slow, while a large learning rate can cause the training process to overshoot minima.
+
+4. **Dropout Rate**
+   - Dropout rate is the fraction of neurons that are randomly turned off during each forward pass. This helps prevent overfitting by ensuring that the network does not become too reliant on specific neurons and forces the network to learn more robust features.
+
+5. **Kernel**
+   - In the context of convolutional neural networks (CNNs), a kernel (or filter) is a matrix used to perform convolution operations on input data (such as images). The kernel slides over the input matrix to extract features like edges, textures, and patterns.
+
+6. **Activation Function**
+   - The activation function defines how the weighted sum of inputs is transformed into the output of a neuron. Common activation functions include:
+     - **Sigmoid**: Outputs values between 0 and 1.
+     - **Tanh**: Outputs values between -1 and 1.
+     - **ReLU (Rectified Linear Unit)**: Outputs the input directly if positive, otherwise, it outputs zero.
+     - **Softmax**: Used in the output layer for multi-class classification, outputs a probability distribution.
+
+7. **Number of Epochs**
+   - An epoch is one complete pass through the entire training dataset. The number of epochs is the total number of passes the algorithm makes through the data during training. More epochs can lead to better learning, but too many can cause overfitting.
+
+8. **Batch Size**
+   - Batch size is the number of training examples used in one iteration of training. For instance, if the dataset has 1000 records and the batch size is set to 100, the dataset will be divided into 10 batches. Smaller batches make training more stochastic and can help generalize better, while larger batches make the training process more stable and efficient.
+
+9. **Momentum**
+   - Momentum is a technique to accelerate gradient descent by adding a fraction of the previous update to the current update. This helps to smooth out oscillations and speed up convergence. It can be particularly useful in navigating the cost function's landscape.
+
+10. **Optimizers**
+    - Optimizers are algorithms used to adjust the weights and biases of the network to minimize the loss function. They determine how the model updates during training.
+      - **Adagrad**: Adapts the learning rate to the parameters, performing larger updates for infrequent and smaller updates for frequent parameters.
+      - **Adadelta, RMSProp, Adam**: These optimizers further refine the adaptation of learning rates and incorporate momentum to improve convergence and model performance.
+
+11. **Learning Rate**
+    - This is reiterated for emphasis as it is crucial. The learning rate controls how much the weights and biases are adjusted during training after each batch. Optimizers help to adjust this parameter dynamically during training to achieve better results.
+
+## Summary
+
+To achieve a well-trained model, it is essential to carefully tune these hyperparameters. The right combination can significantly enhance the model's performance and generalization ability. Often, finding the best hyperparameters involves experimentation and validation to determine the most effective configuration for the specific task and dataset.
