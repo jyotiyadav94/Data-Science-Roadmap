@@ -115,3 +115,174 @@ Disadvantages of RNN's
 
 * Short-term memory means that the model starts to forget the longer the model is trained. There is an extension of RNN called LSTM to alleviate this problem.
 
+
+# Explain What are autoencoders in Deep Learning ? Explain the different layers of autoencoders and mention three practical usages of them?
+
+Traditional feedforward neural networks can be great at performing tasks such as classification and regression, but what if we would like to implement solutions such as signal denoising or anomaly detection? 
+
+
+What are Autoencoders?
+Autoencoders are one of the deep learning types used for unsupervised learning. There are key layers of autoencoders, which are the input layer, encoder, bottleneck hidden layer, decoder, and output.
+
+The three layers of the autoencoder are:-
+
+* Encoder - Compresses the input data to an encoded representation which is typically much smaller than the input data.
+* Latent Space Representation/ Bottleneck/ Code - Compact summary of the input containing the most important features
+* Decoder - Decompresses the knowledge representation and reconstructs the data back from its encoded form. Then a loss function is used at the top to compare the input and output images. NOTE- It's a requirement that the dimensionality of the input and output be the same. Everything in the middle can be played with.
+
+Autoencoders have a wide variety of usage in the real world. The following are some of the popular ones:
+
+Transformers and Big Bird (Autoencoders is one of these components in both algorithms): Text Summarizer, Text Generator
+* Anomly detection
+* Image compression
+* Nonlinear version of PCA
+
+
+If an Autoencoder is provided with a set of input features completely independent of each other, then it would be really difficult for the model to find a good lower-dimensional representation without losing a great deal of information (lossy compression).
+
+Autoencoders can, therefore, also be considered a dimensionality reduction technique, which compared to traditional techniques such as Principal Component Analysis (PCA), can make use of non-linear transformations to project data in a lower dimensional space. If you are interested in learning more about other Feature Extraction techniques, additional information is available in this feature extraction tutorial..
+
+Additionally, compared to standard data compression algorithms like gzpi, Autoencoders can not be used as general-purpose compression algorithms but are handcrafted to work best just on similar data on which they have been trained on.
+
+Some of the most common hyperparameters that can be tuned when optimizing your Autoencoder are:
+
+* The number of layers for the Encoder and Decoder neural networks
+* The number of nodes for each of these layers
+* The loss function to use for the optimization process (e.g., binary cross-entropy or mean squared error)
+* The size of the latent space (the smaller, the higher the compression, acting, therefore as a regularization mechanism)
+* Finally, Autoencoders can be designed to work with different types of data, such as tabular, time-series, or image data, and can, therefore, be designed to use a variety of layers, such as convolutional layers, for image analysis.
+
+Ideally, a well-trained Autoencoder should be responsive enough to adapt to the input data in order to provide a tailor-made response but not so much as to just mimic the input data and not be able to generalize with unseen data (therefore overfitting).
+
+Types of Autoencoders
+Over the years, different types of Autoencoders have been developed:
+
+Undercomplete Autoencoder
+Sparse Autoencoder
+Contractive Autoencoder
+Denoising Autoencoder
+Convolutional Autoencoder
+Variational Autoencoder
+Let’s explore each in more detail.
+
+Undercomplete Autoencoder
+This is the simplest version of an autoencoder. In this case, we don’t have an explicit regularization mechanism, but we ensure that the size of the bottleneck is always lower than the original input size to avoid overfitting. This type of configuration is typically used as a dimensionality reduction technique (more powerful than PCA since its also able to capture non-linearities in the data).
+
+Sparse Autoencoder
+A Sparse Autoencoder is quite similar to an Undercomplete Autoencoder, but their main difference lies in how regularization is applied. In fact, with Sparse Autoencoders, we don’t necessarily have to reduce the dimensions of the bottleneck, but we use a loss function that tries to penalize the model from using all its neurons in the different hidden layers (Figure 2).
+
+This penalty is commonly referred to as a sparsity function, and it's quite different from traditional regularization techniques since it doesn’t focus on penalizing the size of the weights but the number of nodes activated.
+
+Figure 2: Sparse Autoencoder Architecture (Image by Author).
+
+In this way, different nodes could specialize for different input types and be activated/deactivated depending on the specifics of the input data. This sparsity constraint can be induced by using L1 Regularization and KL divergence, effectively preventing the model from overfitting.
+
+Contractive Autoencoder
+The main idea behind Contractive Autoencoders is that given some similar inputs, their compressed representation should be quite similar (neighborhoods of inputs should be contracted in small neighborhood of outputs). In mathematical terms, this can be enforced by keeping input hidden layer activations derivatives small when fed similar inputs.
+
+Denoising Autoencoder
+With Denoising Autoencoders, the input and output of the model are no longer the same. For example, the model could be fed some low-resolution corrupted images and work for the output to improve the quality of the images. In order to assess the performance of the model and improve it over time, we would then need to have some form of labeled clean image to compare with the model prediction.
+
+Convolutional Autoencoder
+To work with image data, Convolutional Autoencoders replace traditional feedforward neural networks with Convolutional Neural Networks for both the encoder and decoder steps. Updating type of loss function, etc., this type of Autoencoder can also be made, for example, Sparse or Denoising, depending on your use case requirements.
+
+Variational Autoencoder
+In every type of Autoencoder considered so far, the encoder outputs a single value for each dimension involved. With Variational Autoencoders (VAE), we make this process instead probabilistic, creating a probability distribution for each dimension. The decoder can then sample a value from each distribution describing the different dimensions and construct the input vector, which it can then be used to reconstruct the original input data.
+
+One of the main applications of Variational Autoencoders is for generative tasks. In fact, sampling the latent model from distributions can enable the decoder to create new forms of outputs that were previously not possible using a deterministic approach.
+
+If you are interested in testing an online a Variational Autoencoder trained on the MNIST dataset, you can find a live example.
+
+
+# What is an activation function and discuss the use of an activation function? Explain three different types of activation functions?
+An activation function in a neural network is a mathematical function applied to each neuron's output (or "activation") to determine whether it should be activated or not.It maps the resulting values in between 0 to 1 or -1 to 1 etc(depending upon the function). This function introduces non-linearity into the model, enabling the network to learn complex patterns and make sense of intricate data. Without activation functions, a neural network would essentially be a linear regression model, regardless of the number of layers it has.In other words, activation functions are what make a linear regression model different from a neural network. 
+
+Key Purposes of Activation Functions
+Non-linearity: They allow the network to capture non-linear relationships in the data.
+Bounded output: Some activation functions provide bounded output, which can make training more stable.
+Differentiability: Most activation functions are differentiable, which is crucial for backpropagation in training the network.
+
+There are a lot of activation functions:
+
+1. Sigmoid function
+![Alt text](<images/image.png>)
+
+2. Softmax Function
+![Alt text](<images/image copy 3.png>)
+
+3. Leaky RELU 
+![Alt text](<images/image copy 2.png>)
+
+4. RELU function
+![Alt text](<images/image copy.png>)
+
+
+Selection of Activation Function
+* Hidden Layers: ReLU and its variants (Leaky ReLU, PReLU, ELU) are commonly used due to their efficiency and ability to mitigate the vanishing gradient problem.
+* Output Layer: Depends on the task:
+* Binary Classification: Sigmoid function.
+* Multi-Class Classification: Softmax function.
+* Regression: Linear activation (identity function).
+
+
+# You are using a deep neural network for a prediction task. After training your model, you notice that it is strongly overfitting the training set and that the performance on the test isn’t good. What can you do to reduce overfitting?
+
+### Reducing Overfitting in Deep Neural Networks
+
+Overfitting occurs when a deep neural network performs well on training data but poorly on validation or test data. It means the model has learned the noise and specific details of the training data rather than generalizing to unseen data. To reduce overfitting, modifications can be made at three stages: input data, network architecture, and training process.
+
+### Input Data
+
+1. **Feature Availability and Reliability**
+   - Ensure all features are correctly gathered and relevant to the prediction task. Reliable and relevant features contribute to better model performance.
+
+2. **Consistent Distribution**
+   - Verify that the training, validation, and test datasets share the same distribution. If the validation set distribution differs, the model will struggle to generalize as it encounters patterns it hasn't seen before.
+
+3. **Data Contamination/Leakage**
+   - Ensure there's no overlap or leakage of information between the training and validation/test datasets. Leakage can give the model an unfair advantage and lead to overfitting.
+
+4. **Dataset Size**
+   - If the dataset is small, consider data augmentation techniques to artificially increase its size. This is particularly useful for image data where transformations (like rotation, flipping, and scaling) can create new training examples.
+
+5. **Balanced Dataset**
+   - Ensure the dataset is balanced, meaning all classes are represented equally. Imbalanced datasets can cause the model to be biased towards the majority class.
+
+## Network Architecture
+
+1. **Model Complexity**
+   - Overly complex models (with too many layers or neurons) can overfit the training data. Simplify the architecture to match the complexity of the task.
+
+2. **Layer Types**
+   - Consider replacing fully connected layers with convolutional and pooling layers, especially for tasks involving spatial data like images. Convolutional layers can capture spatial hierarchies in data better.
+
+3. **Pre-trained Models**
+   - Use pre-trained models or transfer learning, which involves fine-tuning models pre-trained on large datasets. This can help when the training data is limited or the task is similar to the one the pre-trained model was trained on.
+
+4. **Regularization**
+   - Apply regularization techniques like:
+     - **L1 Regularization (Lasso)**: Adds a penalty equal to the absolute value of the magnitude of coefficients.
+     - **L2 Regularization (Ridge)**: Adds a penalty equal to the square of the magnitude of coefficients.
+     - **Elastic Net**: Combines L1 and L2 regularization.
+
+5. **Dropout**
+   - Add dropout layers, which randomly drop neurons during training to prevent the network from becoming too reliant on specific neurons, encouraging more robust feature learning.
+
+6. **Batch Normalization**
+   - Add batch normalization layers to stabilize and accelerate training by normalizing the inputs of each layer, reducing the sensitivity to initial weights.
+
+## Training Process
+
+1. **Early Stopping**
+   - Monitor the validation loss during training and stop when it no longer decreases. This prevents the model from continuing to learn the noise in the training data.
+
+2. **Restore Best Weights**
+   - Use callbacks to restore the model weights from the epoch with the best validation performance. This ensures that the final model is the one that performed best on the validation set.
+
+3. **Cross-Validation**
+   - Implement cross-validation to ensure the model's performance is consistent across different subsets of the data, reducing the likelihood of overfitting to any single subset.
+
+4. **Learning Rate Schedules**
+   - Adjust the learning rate during training. Starting with a higher learning rate and gradually decreasing it can help the model converge more effectively without overfitting.
+
+By implementing these strategies, you can reduce overfitting and improve the generalization performance of your deep neural network.
