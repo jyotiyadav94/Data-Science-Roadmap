@@ -20,7 +20,7 @@ FULL OUTER JOIN table2
 ON table1.column_name = table2.column_name
 WHERE condition;
 ```
-
+![alt text](https://github.com/youssefHosni/Data-Science-Interview-Questions/blob/main/Figures/Joins%20in%20SQL.png)
 
 # MongoDB Atlas
 
@@ -88,25 +88,68 @@ A JOIN clause is used to combine rows from two or more tables, based on a relate
 * Left Join:  Left Join in SQL is used to return all the rows from the left table but only the matching rows from the right table where the join condition is fulfilled.
 * Right Join: Right Join in SQL is used to return all the rows from the right table but only the matching rows from the left table where the join condition is fulfilled.
 * Full Join: Full join returns all the records when there is a match in any of the tables. Therefore, it returns all the rows from the left-hand side table and all the rows from the right-hand side table.
-![alt text](https://github.com/youssefHosni/Data-Science-Interview-Questions/blob/main/Figures/Joins%20in%20SQL.png)
+
 
 ### Q2: Define the primary, foreign, and unique keys and the differences between them? ###
 
-**Primary key:** Is a key that is used to uniquely identify each row or record in the table, it can be a single column or composite pk that contains more than one column
+### Database Keys: Primary, Foreign, and Unique Keys
 
-* The primary key doesn't accept null or repeated values
-* The purpose of the primary key is to keep the Entity's integrity
-* There is only one PK in each table
-* Every row must have a unique primary key
+### Primary Key
 
-**Foreign key:** Is a key that is used to identify, show or describe the relationship between tuples of two tables. It acts as a cross-reference between tables because it references the primary key of another table, thereby establishing a link between them.
+**Definition:** A primary key is a column (or a set of columns) in a table that uniquely identifies each row in that table.
 
-* The purpose of the foreign key is to keep data integrity
-* It can contain null values or primary key values
+**Characteristics:**
+1. **Uniqueness:** Each value in the primary key column(s) must be unique across the table.
+2. **Non-nullability:** Primary key columns cannot contain NULL values.
+3. **Single per Table:** Each table can have only one primary key.
 
-**Unique key:** It's a key that can identify each row in the table as the primary key but it can contain one null value
+**Purpose:** The primary key ensures that each record in the table is unique and can be uniquely identified.
 
-* Every table can have more than one Unique key
+**Example:**
+```sql
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT
+);
+```
+### Foreign Key
+
+**Definition:** A foreign key is a column (or a set of columns) in a table that creates a link between the data in two tables. It refers to the primary key in another table.
+
+**Characteristics:**
+1. **Referential Integrity:** The values in a foreign key column must match values in the referenced primary key column or be NULL.
+2. **Can Be Null:** Foreign key columns can contain NULL values, depending on the database design.
+
+**Purpose:** Foreign keys ensure referential integrity by linking rows in one table to rows in another table.
+```sql
+CREATE TABLE Enrollments (
+    EnrollmentID INT PRIMARY KEY,
+    StudentID INT,
+    CourseID INT,
+    FOREIGN KEY (StudentID) REFERENCES Students(StudentID)
+);
+```
+### Unique Key
+
+**Definition:** A unique key is a column (or a set of columns) that ensures all values in the column(s) are unique across the table.
+
+**Characteristics:**
+1. **Uniqueness:** Each value in the unique key column(s) must be unique.
+2. **Nullability:** Unique key columns can contain NULL values, but each NULL is considered unique (if the database system allows NULLs in unique constraints).
+3. **Multiple per Table:** A table can have multiple unique keys.
+
+**Purpose:** Unique keys ensure that the values in specific columns are unique across the table, providing a way to uniquely identify records based on columns other than the primary key.
+
+**Example:**
+```sql
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Email VARCHAR(100) UNIQUE,
+    PhoneNumber VARCHAR(15) UNIQUE
+);
+```
+
 
 ### Q3: What is the difference between BETWEEN and IN operators in SQL? ###
 Answer:
