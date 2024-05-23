@@ -65,32 +65,36 @@ Then I got another opportunity to work with wenda SRLin Bologna since April 2022
 
 For my thesis, I worked on the topic of "Extraction of specific entities from Unstructured documents" in the field of Natural Language Processing (NLP) and Computer Vision (CV).
 
-In my role, I have been involved in automating the manual document processing of logistic documents in the supply chain domain. This includes tasks such as 
+Project1: Development of Agents using LangChain:
+* Role: Spearheaded development and deployment of a versatile agent for the marketing team.
+Technologies Used:
+* Open-source tools: Wikipedia, DuckDuckGoSearch, Serper API.
+* Advanced models: Llama-3, Mistral 8×7B, Mistral 7B.
+* Data pipeline technologies: AWS, Apache Airflow, Celery, Redshift, Glue, Athena.
+Functionality:
+* Incorporated Retrieval-Augmented Generation (RAG).
+* Optimized response accuracy and relevance through meticulous prompt engineering.
+* Fine-tuned advanced models to enhance the agent’s capabilities.
+* Data Management: Constructed an end-to-end data pipeline for seamless data management and processing.
 
-* key information extraction 
-* document classification, 
-* Named Entity Recognisition Task
-* Developing a chatbot for Enhanced user experience and information retrieval capabilities by integrating ChatGPT prompts with LangChain, thereby leveraging PDF functionality.Developed chatbots for PDF functionality using Langchain
+Proejct2: Document Classification and Information Extraction:
+Model Development:
+* Developed a model to classify pages within PDF documents and extract information.
+* Showcased the model on Hugging Face with Gradio.
+Technologies Used:
+* OCR Tools: Tesseract, PaddleOCR, Keras-OCR, Amazon Textract, Google Vision.
+* Multimodal Transformers: Utilized to combine images and spatial information (text and bounding boxes).
+Performance:
+* Achieved an F1 score of approximately 94%.
+* Model capable of classifying pages and extracting information.
 
-* OCRs like EasyOCR, Pytesseract, PaddleOCR, Google Vision OCR, and Amazon Textract.
-* Worked with handling different data structures like PDF, Images, XML, Email (.msg) , Word,Text
-
-In my work, I have utilized NLP and CV techniques to enhance supply chain automation efficiency. I have successfully reduced document processing time by 75% compared to manual processing. 
-
-* Dataset collection
-* Custom Dataset preparation
-* Modelling ,Training &  deploying Document AI Transformer models
-
-
-Email NER using chatGPT Prompts LLM fine tuning
-Development of a dataset for training the NER task using OpenAI's ChatGPT with Turbo 3.5 through the creation of prompts.
-Fine-tuned the Llama 2 model specifically for the Named Entity Recognition task, employing PEFT techniques during the fine-tuning process of Llama2-7b.
-
-
-Developed and Deployed the Predictive Models using Google cloud platform
-Training an image , Tabular dataset ,text & Video classification dataset using AutoML
-Machine Learning Model development using vertex AI platform .
-Tech stack: Transformers, BERT, NLP, HuggingFace, Gradio, Computer Vision, OCRs, Image Processing , Docker,GPT Prompts,LLMs,Vertex AI,GCP,Flask, Celery, RabbitMQ,Redis
+Project3: Named Entity Recognition (NER) and Dataset Annotation:
+* NLP Models Applied: BERT, RoBERTa, XLM-RoBERTa, Deberta.
+Research and Comparative Performance:
+* Fine-tuned and deployed LLM models such as Llama 2, Mixtral 8×7B, Gemma, and Vicuna using RAG and PEFT techniques.
+Enhancements:
+* Utilized ChatGPT prompts for calculations within information extraction.
+* Improved user experience and information retrieval processes.
 
 ## Hobbies
 
