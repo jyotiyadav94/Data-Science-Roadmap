@@ -57,25 +57,38 @@ During my academic period, I worked on projects and internships, including one a
 
 ### Data Science Consultant (Freelancing)
 
-During my freelancing period, I developed an Instagram likes predictor using machine learning models for automated likes prediction based on metadata, NLP, and image features.Instagram likes predictor and utilized machine learning models for automated likes prediction based on metadata, NLP, and Image features. The Image Analysis Library of Azure was used to extract the features of image tags and its corresponding text of the images. I have experience in data compilation, analysis, and feature extraction.
+During my freelancing period, I developed an Instagram likes predictor using machine learning models for automated likes prediction based on metadata, NLP, and image features. Instagram likes predictor and utilized machine learning models for automated likes prediction based on metadata, NLP, and Image features. The Image Analysis Library of Azure was used to extract the features of image tags and the corresponding text of the images. I have experience in data compilation, analysis, and feature extraction.
 
 ## Professional Experience ( Wenda Srl)
 
-Then I got another opportunity to work with wenda SRLin Bologna since April 2022.Wenda SRL is a startup in Bologna specializing in the supply chain domain.
+Then I got another opportunity to work with Wenda SRLin Bologna in April 2022. Wenda SRL is a startup in Bologna specializing in the supply chain domain.
 
 For my thesis, I worked on the topic of "Extraction of specific entities from Unstructured documents" in the field of Natural Language Processing (NLP) and Computer Vision (CV).
 
 Project1: Development of Agents using LangChain:
 * Role: Spearheaded development and deployment of a versatile agent for the marketing team.
+The agent's purpose was to do copywriting for the marketing team for maximum personalization We also provided additional information from the APIs for the restaurants. There were different use cases
+1. Provided the title of the dish the agent needs to extract other information like : Ingredients, descriptions,Allergens & additional information
+2. Given an image & title of the image the agent has to write the 4 posts for social media
+3. Given an goal (advertising ) & Interest (age - 18-69, Facebook interest: It has to generate the 
+4. Similarly given an object of the campaign like promotions or offers. It has to write the campaign name, campaign object & campaign email. 
+Later on The agent deployed using the fast API, docker, docker-compose.yaml on the Google cloud platform. 
+
+
 Technologies Used:
 * Open-source tools: Wikipedia, DuckDuckGoSearch, Serper API.
 * Advanced models: Llama-3, Mistral 8×7B, Mistral 7B.
-* Data pipeline technologies: AWS, Apache Airflow, Celery, Redshift, Glue, Athena.
-Functionality:
+
+Data pipeline technologies: AWS, Apache Airflow, Celery, Redshift, Glue, Athena.
+* At first we utilise the model from ChatGroQ which provides faster access to the open source LLM model Which provides the faster AI Inference. 
 * Incorporated Retrieval-Augmented Generation (RAG).
+* ReAct - The agent combine both the reasoning , thought and action (chain of thoughts ) before taking any steps 
+https://www.promptingguide.ai/techniques/react
 * Optimized response accuracy and relevance through meticulous prompt engineering.
 * Fine-tuned advanced models to enhance the agent’s capabilities.
 * Data Management: Constructed an end-to-end data pipeline for seamless data management and processing.
+
+
 
 Proejct2: Document Classification and Information Extraction:
 Model Development:
