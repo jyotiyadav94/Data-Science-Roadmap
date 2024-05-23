@@ -616,7 +616,7 @@ Remove Outliers:
 As a last resort, outliers can be removed from the dataset if they are deemed to be true anomalies that do not represent the underlying pattern. However, this should be done with caution as it may lead to loss of information.
 Each of these methods offers a different approach to handle outliers in machine learning models. The choice of method depends on the nature of the data, the model being used, and the specific goals of the analysis. It's often advisable to try multiple techniques and evaluate their effectiveness on the dataset.
 
-12.  Describe the motivation behind random forests and mention two reasons why they are better than individual decision trees.
+# 12.  Describe the motivation behind random forests and mention two reasons why they are better than individual decision trees.
 
 
 | Aspect                          | Random Forest                                                              | Decision Trees                                                            |
@@ -630,7 +630,7 @@ Each of these methods offers a different approach to handle outliers in machine 
 | **Performance**                 |
 
 
-13. What are the differences and similarities between XGBOOST and random forest? and what are the advantages and disadvantages of each when compared to each other?
+# 13. What are the differences and similarities between XGBOOST and random forest? and what are the advantages and disadvantages of each when compared to each other?
 
 The similarities between gradient boosting and random forest can be summed up like this:
 
@@ -658,7 +658,8 @@ In gradient boosting, training might take longer because every tree is created s
 Additionally, tunning the hyperparameters of gradient boosting is more complex than those of random forest
 
 
-14. What are L1 and L2 regularization? What are the differences between the two?
+# 14. What are L1 and L2 regularization? What are the differences between the two?
+
 Regularization is a technique used to avoid overfitting by trying to make the model simpler. One way to apply regularization is by adding the weights to the loss function. This is done to consider minimizing unimportant weights. In L1 regularization, we add the sum of the absolute of the weights to the loss function. In L2 regularization, we add the sum of the squares of the weights to the loss function.
 
 | Aspect               | L1 Regularization                            | L2 Regularization                              |
