@@ -349,7 +349,13 @@ Overall, XGBoost is a powerful and versatile algorithm that excels in various ma
 
 # 4. Logistic Regression
 
-Logistic Regression is a statistical method used for modeling the relationship between a binary dependent variable and one or more independent variables. Despite its name, logistic regression is actually a classification algorithm, commonly used for binary classification tasks, where the target variable has two possible outcomes (e.g., 0 or 1, true or false, yes or no).
+Logistic Regression is a statistical method used for modeling the relationship between a binary dependent variable and one or more independent variables. Despite its name, logistic regression is actually a classification algorithm, commonly used for binary classification tasks, where the target variable has two possible outcomes (e.g., 0 or 1, true or false, yes or no).Logistic regression is used to calculate the probability of occurrence of an event in the form of a dependent output variable based on independent input variables. Logistic regression is commonly used to estimate the probability that an instance belongs to a particular class. If the probability is bigger than 0.5 then it will belong to that class (positive) and if it is below 0.5 it will belong to the other class. This will make it a binary classifier.
+
+It is important to remember that the Logistic regression isn't a classification model, it's an ordinary type of regression algorithm, and it was developed and used before machine learning, but it can be used in classification when we put a threshold to determine specific categories"
+
+There is a lot of classification applications to it:
+
+Classify email as spam or not, To identify whether the patient is healthy or not, and so on.
 
 ### How Logistic Regression Works:
 
@@ -669,5 +675,255 @@ Regularization is a technique used to avoid overfitting by trying to make the mo
 | Robustness to Outliers | Less sensitive to outliers due to absolute value penalty | More sensitive to outliers due to squared penalty |
 | Feature Selection    | Useful for feature selection, shrinks less important features' coefficients to zero | Generally keeps all features in the model, reduces their impact |
 | Computational Complexity | Involves absolute value calculations, potentially more computationally expensive | Involves squaring weights, simpler computationally |
+
+
+# 15. What are the Bias and Variance in a Machine Learning Model and explain the bias-variance trade-off?
+* Bias (Underfitting)
+Bias refers to the error due to overly simplistic assumptions in the learning algorithm. A model with high bias tends to underfit the data, meaning it oversimplifies the underlying patterns. This leads to poor predictive performance as the model cannot capture the complexity of the real-world problem.
+
+Example of High Bias:
+
+Suppose you are training a linear regression model to predict housing prices. If the model assumes that the relationship between the features (e.g., square footage, number of bedrooms) and the price is strictly linear, it may perform poorly when the true relationship is more complex.
+
+
+* Variance (Overfitting)
+Variance, on the other hand, is the error due to excessive complexity in the learning algorithm. A model with high variance captures not only the underlying patterns but also the noise in the training data. This leads to poor generalization to unseen data.
+
+Example of High Variance:
+
+Imagine training a decision tree with a very deep structure on a dataset of handwritten digits. While the tree can fit the training data perfectly, it might perform poorly on new, unseen digits because it has essentially memorized the training examples, including their individual quirks.
+
+The Tradeoff: Balancing Bias and Variance
+The bias-variance tradeoff is the delicate equilibrium between underfitting and overfitting. The goal is to find the optimal level of complexity that allows a model to generalize effectively to unseen data. This tradeoff is often visualized as a curve, known as the validation error curve:
+
+![Supervised Learning](images/image.png)
+
+Optimal Region (Tradeoff): The point of optimal model complexity lies between the bias and variance regions, often referred to as the “optimal region.” This is where the model generalizes well to both the training and validation data, resulting in the lowest validation error.
+
+Solutions to Address Bias and Variance
+
+* Regularization: Regularization techniques like L1 (Lasso) and L2 (Ridge) can help mitigate overfitting. These methods add penalty terms to the model’s cost function, discouraging it from becoming overly complex.
+
+* Feature Engineering: Thoughtful feature selection and engineering can reduce both bias and variance. By including relevant features and excluding noisy ones, you can improve model performance.
+
+* Cross-Validation: Utilize cross-validation to assess your model’s performance on different subsets of the data. This helps you gauge how well your model generalizes across various data splits, providing valuable insights into bias and variance.
+
+* Ensemble Methods: Ensemble techniques such as Random Forests and Gradient Boosting combine multiple models to achieve better performance. They can effectively reduce overfitting while improving predictive accuracy.
+
+* Collect More Data: If your model suffers from high bias (underfitting), acquiring more data can help it capture more complex patterns. Additional data can be especially beneficial when dealing with deep neural networks.
+
+# 16. Mention three ways to handle missing or corrupted data in a dataset.
+In general, real-world data often has a lot of missing values. The cause of this can be data corruption or failure to record the data. The handling of missing data is very important during the preprocessing of the dataset as many machine learning algorithms do not support missing values.
+
+There are several different ways to handle these but here, the focus will be on the most common ones.
+
+* Deleting the row with missing values
+The first method is to delete the rows or columns that have null values. This is an easy and fast way and leads to a robust model. However, it will cause the loss of a lot of information depending on the amount of missing data. Therefore, it can only be applied if the missing data represents a small percentage of the whole dataset.
+
+* Using learning algorithms that support missing values
+Some machine learning algorithms are quite efficient when it comes to missing values in the dataset. The K-NN algorithm can ignore a column from a distance measure when there are missing values. Naive Bayes can also support missing values when making a prediction. Another algorithm that can handle a dataset with missing values or null values is the random forest model, as it can work on non-linear and categorical data. The problem with this method is that these models' implementation in the scikit-learn library does not support handling missing values, so you will have to implement it yourself.
+
+* Missing value imputation 
+Data imputation implies the substitution of estimated values for missing or inconsistent data in your dataset. There are different ways of determining these replacement values. The simplest one is to change the missing value with the most repeated one in the row or the column. Another simple solution is accommodating the mean, median, or mode of the rest of the row, or the column. The advantage here is that this is an easy and quick fix to missing data, but it might result in data leakage and does not factor the covariance between features. A better option is to use an ML model to learn the pattern between the data and predict the missing values without any data leakage, and the covariance between the features will be factored. The only drawback here is the computational complexity, especially for large datasets.
+
+
+# 17. Explain briefly batch gradient descent, stochastic gradient descent, and mini-batch gradient descent. and what are the pros and cons for each of them?
+
+Gradient descent is an optimization algorithm used to minimize the cost or loss function in machine learning models during the training process. It works by iteratively adjusting the parameters of the model in the direction of the steepest descent of the cost function.
+
+* Batch Gradient Descent (GD):
+In Batch Gradient descent the whole training data is used to minimize the loss function by taking a step toward the nearest minimum by calculating the gradient (the direction of descent)
+Pros:
+Guaranteed convergence to the global minimum for convex cost functions.
+Smooth convergence trajectory.
+Cons:
+Requires a lot of memory to process the entire dataset at once.
+Computationally expensive for large datasets.
+
+* Stochastic Gradient Descent (SGD):
+Stochastic Gradient Descent picks up a random instance in the training data set at every step and computes the gradient based only on that single instance.
+Pros:
+Faster convergence since updates are more frequent.
+Memory-efficient as it processes one sample at a time.
+Cons:
+High variance in updates, leading to noisy convergence.
+May oscillate around the minimum without converging, especially for non-convex cost functions.
+
+* Mini-Batch Gradient Descent:
+Mini-batch gradient descent is a compromise between batch and stochastic gradient descent. It divides the training dataset into small batches of fixed size and computes the gradient using each mini-batch.
+Pros:
+More stable convergence compared to SGD due to averaging over mini-batches.
+More computationally efficient than batch GD for large datasets.
+Cons:
+Requires tuning of batch size, which can impact convergence.
+May still suffer from noise in updates, although less than SGD.
+In summary:
+
+Batch GD guarantees convergence but is memory-intensive and computationally expensive.
+SGD is fast and memory-efficient but has high variance and may not converge reliably.
+Mini-batch GD balances between efficiency and stability, making it a popular choice in practice. However, it requires tuning the batch size.
+The choice of gradient descent algorithm depends on factors like the size of the dataset, computational resources, and the trade-off between convergence speed and stability.
+![local_minima](images/localminima.jpg)
+
+
+# 18.  Explain what is information gain and entropy in the context of decision trees.
+
+Entropy and Information Gain are two key metrics used in determining the relevance of decision-making when constructing a decision tree model and determining the nodes and the best way to split.
+
+The idea of a decision tree is to divide the data set into smaller data sets based on the descriptive features until we reach a small enough set that contains data points that fall under one label.
+
+Entropy is the measure of impurity, disorder, or uncertainty in a bunch of examples. Entropy controls how a Decision Tree decides to split the data. Information gain calculates the reduction in entropy or surprise from transforming a dataset in some way. It is commonly used in the construction of decision trees from a training dataset, by evaluating the information gain for each variable and selecting the variable that maximizes the information gain, which in turn minimizes the entropy and best splits the dataset into groups for effective classification.
+
+# 19. Explain briefly the K-Means clustering and how can we find the best value of K?
+What Is K-Means Clustering?
+K-means clustering is a popular unsupervised machine learning algorithm used for partitioning a dataset into a pre-defined number of clusters. The goal is to group similar data points together and discover underlying patterns or structures within the data.
+
+Recall the first property of clusters – it states that the points within a cluster should be similar to each other. So, our aim here is to minimize the distance between the points within a cluster.
+
+There is an algorithm that tries to minimize the distance of the points in a cluster with their centroid – the k-means clustering technique.
+
+K-means is a centroid-based algorithm or a distance-based algorithm, where we calculate the distances to assign a point to a cluster. In K-Means, each cluster is associated with a centroid.
+
+The main objective of the K-Means algorithm is to minimize the sum of distances between the points and their respective cluster centroid.
+
+Optimization plays a crucial role in the k-means clustering algorithm. The goal of the optimization process is to find the best set of centroids that minimizes the sum of squared distances between each data point and its closest centroid. T
+
+How K-Means Clustering Works?
+Here’s how it works:
+
+Initialization: Start by randomly selecting K points from the dataset. These points will act as the initial cluster centroids.
+Assignment: For each data point in the dataset, calculate the distance between that point and each of the K centroids. Assign the data point to the cluster whose centroid is closest to it. This step effectively forms K clusters.
+Update centroids: Once all data points have been assigned to clusters, recalculate the centroids of the clusters by taking the mean of all data points assigned to each cluster.
+Repeat: Repeat steps 2 and 3 until convergence. Convergence occurs when the centroids no longer change significantly or when a specified number of iterations is reached.
+Final Result: Once convergence is achieved, the algorithm outputs the final cluster centroids and the assignment of each data point to a cluster.
+Objective of k means Clustering
+The main objective of k-means clustering is to partition your data into a specific number (k) of groups, where data points within each group are similar and dissimilar to points in other groups. It achieves this by minimizing the distance between data points and their assigned cluster’s center, called the centroid.
+
+Here’s an objective:
+
+Grouping similar data points: K-means aims to identify patterns in your data by grouping data points that share similar characteristics together. This allows you to discover underlying structures within the data.
+Minimizing within-cluster distance: The algorithm strives to make sure data points within a cluster are as close as possible to each other, as measured by a distance metric (usually Euclidean distance). This ensures tight-knit clusters with high cohesiveness.
+Maximizing between-cluster distance: Conversely, k-means also tries to maximize the separation between clusters. Ideally, data points from different clusters should be far apart, making the clusters distinct from each other
+
+
+# 20. Define Precision, recall, and F1 and discuss the trade-off between them?
+
+![Confusion Matrix](images/confusion matrix.jpg)
+
+![Formula](images/formula.jpg)
+
+Precision:
+Precision measures the accuracy of the positive predictions made by a model. It is the ratio of true positive results to the total number of positive predictions (both true positives and false positives).
+Interpretation:
+High precision indicates that when the model predicts a positive class, it is very likely to be correct. In the context of spam detection, high precision means that most of the emails identified as spam are actually spam
+
+
+Recall:
+Recall, also known as sensitivity or true positive rate, measures the model's ability to identify all relevant instances within a dataset. It is the ratio of true positive results to the total number of actual positive cases (both true positives and false negatives).
+Interpretation:
+High recall indicates that the model successfully captures most of the positive instances. In spam detection, high recall means that most actual spam emails are correctly flagged as spam by the system.
+
+F1-score
+The F1 score is the harmonic mean of precision and recall, providing a single metric that balances both concerns. It is particularly useful when the classes are imbalanced or when one wants to seek a balance between precision and recall.
+Interpretation:
+The F1 score is a useful measure when we need to find a balance between precision and recall. A high F1 score indicates that a model has both high precision and high recall.
+
+Trade-off Between Precision and Recall
+* Understanding the Trade-off:
+Precision and recall often have an inverse relationship. Improving one typically reduces the other. This trade-off arises from how the model handles false positives and false negatives.
+
+* High Precision, Low Recall:
+
+When a model is tuned to be very precise, it becomes conservative in making positive predictions. This means it will only flag emails as spam when it is very certain, resulting in fewer false positives but potentially more false negatives (missing actual spam emails).
+Useful when the cost of false positives is high. For example, in medical diagnosis, a high precision ensures that only those patients are diagnosed with a disease who actually have it, minimizing unnecessary treatments.
+High Recall, Low Precision:
+
+When a model is tuned to have high recall, it becomes more liberal in making positive predictions. This means it will flag as many emails as possible as spam to ensure it catches almost all actual spam, resulting in fewer false negatives but more false positives.
+Useful when the cost of missing a positive instance is high. For example, in detecting fraudulent transactions, a high recall ensures that almost all frauds are caught, even if it means more false alarms.
+Balancing Precision and Recall:
+The F1 score helps in balancing precision and recall, providing a single metric to evaluate the model. However, the ideal balance depends on the specific context and the costs associated with false positives and false negatives. In some cases, precision might be more critical, while in others, recall could be prioritized.
+
+Example in Practice:
+Consider a spam filter:
+
+High Precision: Users are not annoyed by non-spam emails being marked as spam, but some spam emails might slip through.
+High Recall: Almost all spam emails are caught, but some legitimate emails might be incorrectly flagged as spam.
+Ultimately, the choice between prioritizing precision or recall (or balancing both) depends on the specific requirements and constraints of the task at hand.
+
+
+# 21. What are the differences between a model that minimizes squared error and the one that minimizes the absolute error? and in which cases each error metric would be more appropriate?
+
+Both mean square error (MSE) and mean absolute error (MAE) measures the distances between vectors and express average model prediction in units of the target variable. Both can range from 0 to infinity, the lower they are the better the model.
+
+The main difference between them is that in MSE the errors are squared before being averaged while in MAE they are not. This means that a large weight will be given to large errors. MSE is useful when large errors in the model are trying to be avoided. This means that outliers affect MSE more than MAE, that is why MAE is more robust to outliers. Computation-wise MSE is easier to use as the gradient calculation will be more straightforward than MAE, which requires linear programming to calculate it.
+
+
+# 22. Define and compare parametric and non-parametric models and give two examples for each of them?
+Parametric models assume that the dataset comes from a certain function with some set of parameters that should be tuned to reach the optimal performance. For such models, the number of parameters is determined prior to training, thus the degree of freedom is limited and reduces the chances of overfitting.
+
+Ex. Linear Regression, Logistic Regression, LDA
+
+Nonparametric models don't assume anything about the function from which the dataset was sampled. For these models, the number of parameters is not determined prior to training, thus they are free to generalize the model based on the data. Sometimes these models overfit themselves while generalizing. To generalize they need more data in comparison with Parametric Models. They are relatively more difficult to interpret compared to Parametric Models.
+
+Ex. Decision Tree, Random Forest.
+
+# 23. PCA ? 
+
+https://builtin.com/data-science/step-step-explanation-principal-component-analysis
+
+Principal component analysis (PCA) is a dimensionality reduction and machine learning method used to simplify a large data set into a smaller set while still maintaining significant patterns and trends.Basically It reduce the number of variables of a data set, while preserving as much information as possible.
+
+It transforms the data into a new coordinate system where the greatest variances lie on the first axes (principal components), and each subsequent axis (component) has a lesser amount of variance.
+
+![PCA](images/PCA.png)
+
+HOW DO YOU DO A PRINCIPAL COMPONENT ANALYSIS?
+* Step1: Standardize the data
+Transform all the features to the common scale such that transform features so that they have a mean of zero and a standard deviation of one.Once the standardization is done, all the variables will be transformed to the same scale.
+
+* Step2: covariance matrix of the standarize data to identify correlations 
+Calculate the covariance matrix of the standardized data to understand how the variables vary together.We compute the covariance matrix to check if the variables are correlated or not. variables are highly correlated in such a way that they contain redundant information. So, in order to identify these correlations, we compute the covariance matrix.
+
+It’s actually the sign of the covariance that matters:
+If positive then: the two variables increase or decrease together (correlated)
+If negative then: one increases when the other decreases (Inversely correlated)
+
+* Step 3: Compute the eigenvectors and eigenvalues of the covariance matrix to identify the principal components
+Perform eigen decomposition on the covariance matrix to obtain eigenvalues and their corresponding eigenvectors. The eigenvectors represent the directions (principal components) of the new feature space, and the eigenvalues represent the magnitude (variance) in these directions.
+
+* stape 4: Sort Eigenvalues and Eigenvectors:
+Sort the eigenvalues in descending order. The corresponding eigenvectors are also reordered to match this ranking. The eigenvectors associated with the largest eigenvalues represent the most significant principal components.
+
+* Step 5: Select Principal Components:
+Choose the top 𝑘 eigenvectors (principal components) that capture the most variance. The number 𝑘is often chosen such that a significant portion (e.g., 95%) of the total variance is retained.
+
+* Step 6:Transform the Data:
+Project the original data onto the new k-dimensional subspace using the selected eigenvectors. If W is the matrix of 
+k eigenvectors, the transformed data 𝑍
+𝑍=𝑋𝑊
+
+
+Benefits of PCA
+* Dimensionality Reduction:
+PCA reduces the number of variables while preserving essential information, making it easier to visualize and analyze data.
+
+* Noise Reduction:
+By focusing on principal components with high variance, PCA can filter out noise from the data.
+
+* Improved Performance:
+Reducing dimensions can lead to faster computation and improved performance of machine learning algorithms, especially those sensitive to the curse of dimensionality.
+
+Limitations of PCA
+* Linear Assumption:
+PCA assumes linear relationships between variables, which might not capture complex, non-linear patterns.
+
+* Interpretability:
+The transformed features (principal components) are linear combinations of the original features, which might be harder to interpret.
+
+* Scalability:
+For very large datasets, computing eigenvalues and eigenvectors can be computationally intensive.
+
+
+PCA is a powerful tool for simplifying data, revealing hidden structures, and improving the efficiency of subsequent analyses and machine learning tasks.
 
 
