@@ -808,7 +808,7 @@ Maximizing between-cluster distance: Conversely, k-means also tries to maximize 
 
 # 20. Define Precision, recall, and F1 and discuss the trade-off between them?
 
-![Confusion Matrix](images/confusion matrix.jpg)
+![ConfusionMatrix](images/confusionmatrix.jpg)
 
 ![Formula](images/formula.jpg)
 
