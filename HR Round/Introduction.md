@@ -10,13 +10,15 @@ I have a total of 4 years of work experience in India as a software engineer & A
 
 ### HPE (Hewlett Packard Enterprise)
 
-Soon after my graduation, I joined HPE as a Graduate Software Engineer. During my tenure, I focused on manual testing, including functional testing, . I also worked on test plan documentation, analyzing requirements, and identifying and logging defects.
+Soon after my graduation, I joined HPE as a Graduate Software Engineer. During my tenure, I focused on Python development & automation testing including functional testing, I also worked on test plan documentation, analyzing requirements, and identifying and logging defects.
 
+- Creating scripts to automate routine test cases and workflows.
 - Test planning Identify test scenarios, define test objectives, and prioritize testing activities based on project goals and timelines. Writing derived test cases.
 - Executed functional and regression testing.
-- Participated in defect reviews with developers.
+- Participated in defect review meetings.
 - Communicated with offshore and onshore teams.
 - Prepared status reports and demonstrated test deliverables.
+
 
 ### DXC Technology
 
@@ -32,9 +34,8 @@ _ Automation tool using TOSCA test suite
 
 I focused on mobile testing for both Android and iOS devices, dealing with in-app messages, push notifications, and SMS. 
 
-
 - Developed a framework for mobile testing regression cases using Appium Framework & Executing the test cases.
-- Integrate automated tests into the CI/CD pipeline to ensure that tests are executed automatically during the build and deployment process..
+- Integrate automated tests into the CI/CD pipeline to ensure that tests are executed automatically during the build and deployment process.
 - Monitoring & Fixing failed jobs in in jenkins 
 - Attending daily Scrum calls with clients and reporting the status.
 
@@ -61,8 +62,8 @@ During my freelancing period, I developed an Instagram likes predictor using mac
 
 ## Professional Experience ( Wenda Srl)
 
-Then I got another opportunity to work with Wenda SRLin Bologna in April 2022. Wenda SRL is a startup in Bologna specializing in the supply chain domain.
-
+Then I got another opportunity to work with Wenda SRLin Bologna in April 2022. Wenda SRL is a startup in Bologna specializing.
+They initially stated as a food tech company and later they specialized themselfs in the supply chain domain.
 For my thesis, I worked on the topic of "Extraction of specific entities from Unstructured documents" in the field of Natural Language Processing (NLP) and Computer Vision (CV).
 
 Project1: Development of Agents using LangChain:
@@ -93,13 +94,16 @@ https://www.promptingguide.ai/techniques/react
 Proejct2: Document Classification and Information Extraction:
 Model Development:
 * Developed a model to classify pages within PDF documents and extract information.
+* Used Multi-modal transformers to fine-tune the model on the custom datasets. Utilized to combine images and spatial information (text and bounding boxes).
 * Showcased the model on Hugging Face with Gradio.
 Technologies Used:
 * OCR Tools: Tesseract, PaddleOCR, Keras-OCR, Amazon Textract, Google Vision.
-* Multimodal Transformers: Utilized to combine images and spatial information (text and bounding boxes).
 Performance:
 * Achieved an F1 score of approximately 94%.
 * Model capable of classifying pages and extracting information.
+Additionally, Dataset preparation was a huge problem for us at the beginning. So we create a semi-automatic tool which helps us to prepare a larger base of dataset. So basically the model was trained with close to 20 documents and we used the same model to do predictions on other documents. After predictions we did a manual review for the documents correctly annotated.
+
+
 
 Project3: Named Entity Recognition (NER) and Dataset Annotation:
 * NLP Models Applied: BERT, RoBERTa, XLM-RoBERTa, Deberta.
@@ -108,6 +112,8 @@ Research and Comparative Performance:
 Enhancements:
 * Utilized ChatGPT prompts for calculations within information extraction.
 * Improved user experience and information retrieval processes.
+
+
 
 ## Hobbies
 
