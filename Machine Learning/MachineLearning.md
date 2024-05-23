@@ -592,3 +592,81 @@ Coefficients are adjusted during the training process to minimize prediction err
 * In linear models, coefficients directly correspond to the contribution of each feature to the output, while in neural networks, they represent complex interactions within the network's architecture
 
 
+# 11. Mention three ways to make your model robust to outliers.
+
+* Investigate Outliers:
+The first step in handling outliers is to understand why they occurred. Investigate the nature and possible causes of outliers in your dataset.
+
+* Regularization:
+Regularization techniques like L1 (Lasso) or L2 (Ridge) can be added to the model to reduce variance. These techniques penalize large coefficients, which helps in making the model less sensitive to outliers.
+Tree-Based Models:
+
+* Tree-based models such as Random Forest and Gradient Boosting are less affected by outliers compared to linear models. This is because they partition the feature space into regions, making them naturally robust to outliers.
+Winsorization:
+
+* Winsorization is a technique to limit extreme values in the statistical data. It involves replacing outliers with the nearest non-outlier value or capping them with some predefined value. This helps in reducing the effect of outliers on the model.
+
+* Transformation:
+Transforming the data using mathematical functions can help in handling skewed distributions. For example, a log transformation can be applied to data with an exponential distribution or when it is right-skewed, making it more symmetric and reducing the impact of outliers.
+
+* Robust Error Metrics:
+Using more robust error metrics such as Mean Absolute Error (MAE) or Huber Loss instead of Mean Squared Error (MSE) can mitigate the influence of outliers on the model's performance.
+Remove Outliers:
+
+As a last resort, outliers can be removed from the dataset if they are deemed to be true anomalies that do not represent the underlying pattern. However, this should be done with caution as it may lead to loss of information.
+Each of these methods offers a different approach to handle outliers in machine learning models. The choice of method depends on the nature of the data, the model being used, and the specific goals of the analysis. It's often advisable to try multiple techniques and evaluate their effectiveness on the dataset.
+
+12.  Describe the motivation behind random forests and mention two reasons why they are better than individual decision trees.
+
+
+| Aspect                          | Random Forest                                                              | Decision Trees                                                            |
+|---------------------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| **Motivation**                  | Based on the concept of "Wisdom of the Crowd"                               | N/A                                                                       |
+| **Explanation**                 | Aggregate predictions from multiple decision trees for improved accuracy    | Each decision tree independently learns patterns in the data              |
+| **Algorithm Type**              | Ensemble model                                                              | Individual model                                                          |
+| **Variance and Overfitting**    | Generally has lower variance and less prone to overfitting                  | Prone to overfitting due to high variance                                 |
+| **Generalization on Unseen Data** | Generalizes better on unseen data by using randomness in feature selection | May not generalize well on unseen data due to potential overfitting       |
+| **Bias and Error**              | Typically maintains low bias while controlling variance                     | May have higher bias and variance, leading to potential errors            |
+| **Performance**                 |
+
+
+13. What are the differences and similarities between XGBOOST and random forest? and what are the advantages and disadvantages of each when compared to each other?
+
+The similarities between gradient boosting and random forest can be summed up like this:
+
+Both these algorithms are decision-tree based.
+Both are also ensemble algorithms - they are flexible models and do not need much data preprocessing.
+There are two main differences we can mention here:
+
+Random forest uses Bagging. This means that trees are arranged in a parallel fashion, where the results from all of them are aggregated at the end through averaging or majority vote. On, the other hand, gradient boosting uses Boosting, where trees are arranged in a series sequential fashion, where every tree tries to minimize the error of the previous one.
+In random forests, every tree is constructed independently of the others, whereas, in gradient boosting, every tree is dependent on the previous one.
+When we discuss the advantages and disadvantages between the two it is only fair to juxtapose them both with their weaknesses and with their strengths. We need to keep in mind that each one of them is more applicable in certain instances than the other and vice versa. It depends, on the outcome we want to reach and the task we need to solve.
+
+So, the advantages of gradient boosting over random forests include:
+
+Gradient boosting can be more accurate than random forests because we train them to minimize the previous tree’s error.
+It can also capture complex patterns in the data.
+Gradient boosting is better than random forest when used on unbalanced data sets.
+On the other hand, we have the advantages of random forest over gradient boosting as well:
+
+Random forest is less prone to overfitting compared to gradient boosting.
+It has faster training as trees are created in parallel and independent of each other.
+Moreover, gradient boosting also exhibits the following weaknesses:
+
+Due to the focus on mistakes during training iterations and the lack of independence in tree building, gradient boosting is indeed more susceptible to overfitting. If the data is noisy, the boosted trees might overfit and start modeling the noise.
+In gradient boosting, training might take longer because every tree is created sequentially.
+Additionally, tunning the hyperparameters of gradient boosting is more complex than those of random forest
+
+
+14. What are L1 and L2 regularization? What are the differences between the two?
+Regularization is a technique used to avoid overfitting by trying to make the model simpler. One way to apply regularization is by adding the weights to the loss function. This is done to consider minimizing unimportant weights. In L1 regularization, we add the sum of the absolute of the weights to the loss function. In L2 regularization, we add the sum of the squares of the weights to the loss function.
+
+| Aspect               | L1 Regularization                            | L2 Regularization                              |
+|----------------------|-----------------------------------------------|------------------------------------------------|
+| Penalty Calculation | Adds sum of absolute values of weights to loss function Loss (L1): Cost function + L * |weights| | Adds sum of squares of weights to loss function Loss (L2): Cost function + L * weights ² |
+| Effect on Weights    | Some weights may become exactly zero, resulting in sparsity | Weights are kept relatively small but non-zero |
+| Robustness to Outliers | Less sensitive to outliers due to absolute value penalty | More sensitive to outliers due to squared penalty |
+| Feature Selection    | Useful for feature selection, shrinks less important features' coefficients to zero | Generally keeps all features in the model, reduces their impact |
+| Computational Complexity | Involves absolute value calculations, potentially more computationally expensive | Involves squaring weights, simpler computationally |
+
+
