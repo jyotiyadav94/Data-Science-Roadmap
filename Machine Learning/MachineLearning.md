@@ -531,6 +531,32 @@ Support Vector Machine (SVM) is a supervised machine learning algorithm used for
 
 Overall, SVM is a powerful and versatile algorithm that performs well in high-dimensional spaces and is effective for classification tasks with complex decision boundaries. However, it requires careful selection of parameters and may not be suitable for tasks with extremely large datasets.
 
+# Comparison Between Logistic Regression and Support Vector Machine (SVM)
+
+This document provides a detailed comparison between Logistic Regression and Support Vector Machine (SVM), highlighting their key differences in various aspects such as mathematical foundation, decision boundary, optimization objectives, and more.
+
+## Table of Comparison
+
+| **Aspect**                    | **Logistic Regression**                                    | **Support Vector Machine (SVM)**                        |
+|-------------------------------|------------------------------------------------------------|---------------------------------------------------------|
+| **Mathematical Foundation**   | Models the probability of class membership using the logistic (sigmoid) function. | Finds the hyperplane that best separates the classes with the maximum margin. |
+| **Decision Function**         | \[ P(y=1|x) = \sigma(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n) \geq 0.5 \] | \[ w^T x + b = 0 \] where \(w\) is the weight vector and \(b\) is the bias. |
+| **Optimization Objective**    | Minimizes the log-loss (cross-entropy loss) using maximum likelihood estimation. | Maximizes the margin and minimizes classification error using quadratic programming. |
+| **Output**                    | Probability estimates for class membership.                | Class labels based on the position relative to the hyperplane. |
+| **Decision Boundary**         | Linear, but can be extended to non-linear using polynomial or other feature transformations. | Linear, but can handle non-linear boundaries using kernel tricks (e.g., polynomial, RBF kernels). |
+| **Handling of Outliers**      | Less robust to outliers since it directly models probabilities. | More robust to outliers due to the margin maximization criterion. |
+| **Scalability**               | Generally faster and easier to implement, especially for large datasets. | Can be slower and more computationally intensive, especially with non-linear kernels. |
+| **Interpretability**          | Coefficients are easy to interpret as feature importance. | Less interpretable, especially with non-linear kernels. |
+| **Regularization**            | Regularization techniques like L1 (Lasso) and L2 (Ridge) are commonly used. | Regularization is implicit through the margin maximization and can be adjusted using the C parameter. |
+| **Probabilistic Output**      | Provides probabilistic outputs.                            | Does not inherently provide probabilistic outputs, but can use Platt scaling to obtain probabilities. |
+| **Application**               | Commonly used for binary classification problems, and extensions exist for multi-class classification. | Suitable for both binary and multi-class classification, particularly effective in high-dimensional spaces. |
+
+## Summary
+
+- **Logistic Regression** is preferred for problems where interpretability, probability estimates, and simplicity are important. It's generally faster and easier to implement, especially for large datasets.
+- **Support Vector Machine (SVM)** is chosen for its robustness to outliers and effectiveness in high-dimensional spaces. It can handle non-linear decision boundaries through the use of kernel tricks but may be computationally intensive.
+
+Both algorithms have their strengths and weaknesses, and the choice between them should be based on the specific requirements of the problem at hand.
 
 
 
