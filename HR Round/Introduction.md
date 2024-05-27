@@ -179,7 +179,18 @@ Overall, my goal is to make a significant impact in the field of data science by
 
 # 6. What do you know about the company / Why do you want to work for Hodlie ? 
 
-Hodlie is a crypto trading platform powered by AI born in the heat of geneova with the aim of revolutionsing the way of investing in crypto market. We strongly beleive that majority of cryptocurrency investors often lack the necessary skills or time to navigate the complex world of digital asserts. We developed fully automated strategies to democratize crypto investments allowing both begginers and professionals to trade using our AI  
+I understand that CARTIF, established in 1994 and located in the Boecillo Technology Park in Valladolid, Spain, is a prominent Technology Centre dedicated to applied research. It operates as a Foundation, which provides a stable and mission-driven governance structure. CARTIF’s main goals are to identify technological needs, develop R&D-based knowledge, support technological innovation in industry—particularly among small and medium-sized enterprises (SMEs)—and disseminate R&D and innovation outcomes.
+
+CARTIF is highly active in research and development, undertaking over 100 R&D and innovation projects annually, serving a similar number of customers. The organization employs around 200 individuals, including engineers, scientists, and senior researchers, which ensures high-quality outcomes for its projects.
+
+The research areas that CARTIF focuses on are quite diverse. These include:
+
+Industry 4.0: Integrating digital technologies into manufacturing processes.
+Energy and Environment: Developing sustainable energy solutions and environmental protection technologies.
+Construction and Infrastructure: Innovating building techniques and infrastructure development.
+Agrofood: Enhancing agricultural and food production processes.
+Health and Quality of Life: Improving healthcare technologies and solutions for better living standards.
+Governance at CARTIF is robust, with a board comprising 30 organizations from various sectors, such as SMEs, large industrial companies, and universities. This ensures a balanced representation of private, public, and academic interests. CARTIF is also well-integrated into several research and professional networks, both nationally and internationally, participating in 20 such networks, including 13 international ones.
 
 
 
@@ -201,18 +212,11 @@ Weakness :
 2. Over-burden: This can be overcome by delegating task to other team memebers as well. 
 
 
-# 8. Why would you like to move to Milan? 
-Job Opportunities: Germany is known for its strong economy and diverse job market, particularly in fields like engineering, technology, and automotive industries.
+# 8. Why would you like to move to Spain? 
+I have been there in spain for 3 months in Barcelona. I really like the atmosphere around. People are very welcoming & had a good experience with the cuisine.
+On a personal level, I have always been fascinated by Spanish culture, history, and language. The vibrant lifestyle, rich cultural heritage, and beautiful landscapes are incredibly appealing. Living in Spain would provide a wonderful opportunity for personal growth, allowing me to immerse myself in a new culture and improve my Spanish language skills. The prospect of experiencing Spanish cuisine, traditions, and the welcoming nature of its people is something I look forward to.
 
-Education: Germany is home to many prestigious universities and offers high-quality education, often at lower costs compared to other countries. Many international students choose to study in Germany for its excellent academic programs.
-
-Quality of Life: Germany consistently ranks high in quality of life indices due to factors like healthcare, safety, public transportation, and environmental sustainability.
-
-Cultural Experience: Moving to Germany provides an opportunity to immerse oneself in a rich cultural experience, including exploring historical sites, enjoying diverse cuisine, and participating in local traditions and festivals.
-
-European Union Membership: Germany's membership in the European Union offers advantages such as ease of travel within the Schengen Area and access to a diverse range of cultures and languages.
-
-Language Learning: For individuals interested in learning or improving their German language skills, moving to Germany offers an immersive environment for language acquisition.
+Moreover, the quality of life in Spain is highly attractive. With its excellent healthcare system, education, and work-life balance, Spain offers a supportive environment for both professional development and personal well-being. The country’s focus on innovation and sustainability also aligns with my values and interests.
 
 
 # 9. Applying Machine Learning in cherryNPL?
