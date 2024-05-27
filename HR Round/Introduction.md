@@ -197,11 +197,12 @@ CARTIF is highly active in research and development, undertaking over 100 R&D an
 
 The research areas that CARTIF focuses on are quite diverse. These include:
 
-Industry 4.0: Integrating digital technologies into manufacturing processes.
-Energy and Environment: Developing sustainable energy solutions and environmental protection technologies.
-Construction and Infrastructure: Innovating building techniques and infrastructure development.
-Agrofood: Enhancing agricultural and food production processes.
-Health and Quality of Life: Improving healthcare technologies and solutions for better living standards.
+* Industry 4.0: Integrating digital technologies into manufacturing processes.
+* Energy and Environment: Developing sustainable energy solutions and environmental protection technologies.
+* Construction and Infrastructure: Innovating building techniques and infrastructure development.
+* Agrofood: Enhancing agricultural and food production processes.
+* Health and Quality of Life: Improving healthcare technologies and solutions for better living standards.
+
 Governance at CARTIF is robust, with a board comprising 30 organizations from various sectors, such as SMEs, large industrial companies, and universities. This ensures a balanced representation of private, public, and academic interests. CARTIF is also well-integrated into several research and professional networks, both nationally and internationally, participating in 20 such networks, including 13 international ones.
 
 
