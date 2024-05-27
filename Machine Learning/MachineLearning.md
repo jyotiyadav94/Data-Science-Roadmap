@@ -746,6 +746,9 @@ L1 and L2 regularization are techniques used to prevent overfitting in machine l
 
 
 # 15. What are the Bias and Variance in a Machine Learning Model and explain the bias-variance trade-off?
+![bias_variance](https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/978dd100-2ad5-4d03-bb41-c9e283f77a33)
+
+
 * Bias (Underfitting)
 Bias refers to the error due to overly simplistic assumptions in the learning algorithm. A model with high bias tends to underfit the data, meaning it oversimplifies the underlying patterns. This leads to poor predictive performance as the model cannot capture the complexity of the real-world problem.
 
