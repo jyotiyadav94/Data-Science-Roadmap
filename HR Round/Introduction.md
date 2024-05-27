@@ -64,6 +64,10 @@ I did an erasmus Traineership in Barcelona for 3 months on Stock sentiment Analy
 During my freelancing period, I developed an Instagram likes predictor using machine learning models for automated likes prediction based on metadata, NLP, and image features. Instagram likes predictor and utilized machine learning models for automated likes prediction based on metadata, NLP, and Image features. The Image Analysis Library of Azure was used to extract the features of image tags and the corresponding text of the images. I have experience in data compilation, analysis, and feature extraction.
 
 ## Professional Experience ( Wenda Srl)
+I managed everything from dataset preparation , model training , model deployment to client's feedback. 
+hands on experience in Nlp , supervised , unsupervised techniques. I am proficient in python programming, 
+I have used pytorch programming langauge. 
+
 
 Then I got another opportunity to work with Wenda SRLin Bologna in April 2022. Wenda SRL is a startup in Bologna specializing.
 They initially stated as a food tech company and later they specialized themselfs in the supply chain domain.
