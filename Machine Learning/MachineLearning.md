@@ -742,13 +742,7 @@ Additionally, tunning the hyperparameters of gradient boosting is more complex t
 
 L1 and L2 regularization are techniques used to prevent overfitting in machine learning models by adding a penalty to the loss function. These penalties help to constrain the model's parameters, leading to simpler and more generalizable models.Regularization is a technique used to avoid overfitting by trying to make the model simpler. One way to apply regularization is by adding the weights to the loss function. This is done to consider minimizing unimportant weights. In L1 regularization, we add the sum of the absolute of the weights to the loss function. In L2 regularization, we add the sum of the squares of the weights to the loss function.
 
-| Aspect               | L1 Regularization                            | L2 Regularization                              |
-|----------------------|-----------------------------------------------|------------------------------------------------|
-| Penalty Calculation | Adds sum of absolute values of weights to loss function Loss (L1): Cost function + L * |weights| | Adds sum of squares of weights to loss function Loss (L2): Cost function + L * weights ² |
-| Effect on Weights    | Some weights may become exactly zero, resulting in sparsity | Weights are kept relatively small but non-zero |
-| Robustness to Outliers | Less sensitive to outliers due to absolute value penalty | More sensitive to outliers due to squared penalty |
-| Feature Selection    | Useful for feature selection, shrinks less important features' coefficients to zero | Generally keeps all features in the model, reduces their impact |
-| Computational Complexity | Involves absolute value calculations, potentially more computationally expensive | Involves squaring weights, simpler computationally |
+<img width="639" alt="image" src="https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/204f943c-7778-47c0-bcae-2bebf1260eef">
 
 
 # 15. What are the Bias and Variance in a Machine Learning Model and explain the bias-variance trade-off?
