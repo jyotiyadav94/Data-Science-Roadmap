@@ -24,7 +24,7 @@ Soon after my graduation, I joined HPE as a Graduate Software Engineer. During m
 
 After the merger with CSC, the company became DXC Technology. I transitioned to a different team and started working with the automation team. I gained experience in automation testing using Selenium Webdriver, using the programming language Python, and Java, along with frameworks such as Maven, TestNG, and Jenkins.
 
-- Developed regression automation scripts in python.
+- I created frameworks fro Regression testing from scratch using Selenium Webdriver & Python. 
 - Fixed failed jobs in Jenkins and debugged automation test scripts.
 - Reduced testing time for regression cases by 40%.
 - Rest API testing using POSTMAN, 
@@ -55,6 +55,11 @@ The experience in POCs fascinated me, leading me to pursue a master's in Artific
 During my academic period, I worked on projects and internships, including one at Proceedit in Barcelona, where I worked on sentiment analysis for stocks and deployed the model in AWS using Flask.
 
 ## Internship Experience
+
+### Machine Learning (Proceedit)
+
+I did an erasmus Traineership in Barcelona for 3 months on Stock sentiment Analysis Project Mainly working on sentimental analysis of the project while involved Webscrapping the data from twitter & check the sentiment of the tweet & deploying the project
+
 
 ### Data Science Consultant (Freelancing)
 
@@ -91,7 +96,7 @@ https://www.promptingguide.ai/techniques/react
 
 
 
-Proejct2: Document Classification and Information Extraction:
+Proejct2: Document Classification and Information Extraction from documents:
 Model Development:
 * Developed a model to classify pages within PDF documents and extract information.
 * Used Multi-modal transformers to fine-tune the model on the custom datasets. Utilized to combine images and spatial information (text and bounding boxes).
@@ -209,11 +214,11 @@ Weakness :
 1. Balancing Speed and Perfection: I tend to strive for perfection in my work, and this sometimes impacts project timelines. While it ensures the quality of deliverables, I've been working on finding a balance between delivering high-quality work and meeting project deadlines. Setting realistic expectations and timelines has been a part of my improvement strategy
 
 
-2. Over-burden: This can be overcome by delegating task to other team memebers as well. 
+2. Over-burden: This can be overcome by delegating tasks to other team members as well. 
 
 
 # 8. Why would you like to move to Spain? 
-I have been there in spain for 3 months in Barcelona. I really like the atmosphere around. People are very welcoming & had a good experience with the cuisine.
+I am a young single guy and I want to explore the world and live in different locations and experience different cultures while I'm young. I have been there in spain for 3 months in Barcelona. I really like the atmosphere around. People are very welcoming & had a good experience with the cuisine.
 On a personal level, I have always been fascinated by Spanish culture, history, and language. The vibrant lifestyle, rich cultural heritage, and beautiful landscapes are incredibly appealing. Living in Spain would provide a wonderful opportunity for personal growth, allowing me to immerse myself in a new culture and improve my Spanish language skills. The prospect of experiencing Spanish cuisine, traditions, and the welcoming nature of its people is something I look forward to.
 
 Moreover, the quality of life in Spain is highly attractive. With its excellent healthcare system, education, and work-life balance, Spain offers a supportive environment for both professional development and personal well-being. The country’s focus on innovation and sustainability also aligns with my values and interests.
