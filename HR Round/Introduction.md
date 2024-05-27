@@ -146,6 +146,13 @@ I have been with my current company for almost 2 years now, and during this time
 
 Additionally, I have finished all my tasks and there is no relevant work in my current role. Our focus has primarily shifted towards addressing client feedback and working on maintenance tasks, which I have extensive experience in handling. However, I believe my skills and expertise could be better utilized elsewhere, where I can continue to learn and grow, especially in a hybrid role that involves more office-based work. Having been in a remote job during the COVID pandemic, I am eager to transition back into a more office-oriented environment for a fresh experience and new challenges.
 
+* "I'm looking for a job with better opportunities (to make more money)"
+
+* "I'm looking for benefits (like a larger paycheque) I couldn't get from my old workplace"
+
+* "I felt like I needed a change (in the amount of money in my bank account)"
+
+
 I believe that a fresh environment with new challenges will allow me to continue expanding my skill set and contribute to a company that aligns with my professional goals and offers stability. I am excited about the prospect of joining a team where I can continue to learn, contribute, and advance my career.
 
 
