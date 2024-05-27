@@ -177,7 +177,7 @@ Overall, my goal is to make a significant impact in the field of data science by
 * I value the opportunity to educate my peers on the benefits of machine learning models and algorithms. Guiding colleagues in building intelligent algorithms that transform and enhance our business is a responsibility I am keen to take on.
 
 
-# 6. What do you know about the company / Why do you want to work for Hodlie ? 
+# 6. What do you know about the company / Why do you want to work for CARTIF ? 
 
 I understand that CARTIF, established in 1994 and located in the Boecillo Technology Park in Valladolid, Spain, is a prominent Technology Centre dedicated to applied research. It operates as a Foundation, which provides a stable and mission-driven governance structure. CARTIF’s main goals are to identify technological needs, develop R&D-based knowledge, support technological innovation in industry—particularly among small and medium-sized enterprises (SMEs)—and disseminate R&D and innovation outcomes.
 
@@ -218,6 +218,10 @@ On a personal level, I have always been fascinated by Spanish culture, history, 
 
 Moreover, the quality of life in Spain is highly attractive. With its excellent healthcare system, education, and work-life balance, Spain offers a supportive environment for both professional development and personal well-being. The country’s focus on innovation and sustainability also aligns with my values and interests.
 
+Hola 
+
+Mi nombre es jyoti yadav. Yo soy de India. Yo vivo en Italia. Tengo 30 años de edad. Soy un científico de datos.
+gracias.
 
 # 9. Applying Machine Learning in cherryNPL?
 
