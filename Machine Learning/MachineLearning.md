@@ -740,7 +740,7 @@ Additionally, tunning the hyperparameters of gradient boosting is more complex t
 
 # 14. What are L1 and L2 regularization? What are the differences between the two?
 
-Regularization is a technique used to avoid overfitting by trying to make the model simpler. One way to apply regularization is by adding the weights to the loss function. This is done to consider minimizing unimportant weights. In L1 regularization, we add the sum of the absolute of the weights to the loss function. In L2 regularization, we add the sum of the squares of the weights to the loss function.
+L1 and L2 regularization are techniques used to prevent overfitting in machine learning models by adding a penalty to the loss function. These penalties help to constrain the model's parameters, leading to simpler and more generalizable models.Regularization is a technique used to avoid overfitting by trying to make the model simpler. One way to apply regularization is by adding the weights to the loss function. This is done to consider minimizing unimportant weights. In L1 regularization, we add the sum of the absolute of the weights to the loss function. In L2 regularization, we add the sum of the squares of the weights to the loss function.
 
 | Aspect               | L1 Regularization                            | L2 Regularization                              |
 |----------------------|-----------------------------------------------|------------------------------------------------|
