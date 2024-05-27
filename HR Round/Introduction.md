@@ -3,14 +3,12 @@
 ## About
 
 Hello, Good afternoon! My name is Jyoti Yadav. I am from India. I completed my bachelor's degree in 2016 in Electronics & Communications Engineering from India.
-
-## Experiences
-
 I have a total of 4 years of work experience in India as a software engineer & Almost close to 2 years of work experience as a Data Scientist.
+
 
 ### HPE (Hewlett Packard Enterprise)
 
-Soon after my graduation, I joined HPE as a Graduate Software Engineer. During my tenure, I focused on Python development & automation testing including functional testing, I also worked on test plan documentation, analyzing requirements, and identifying and logging defects.
+Soon after my Bachelors Degree, I joined HPE as a Graduate Software Engineer. During my tenure, I focused on Python development & automation testing including functional testing, I also worked on test plan documentation, analyzing requirements, and identifying and logging defects.
 
 - Creating scripts to automate routine test cases and workflows.
 - Test planning Identify test scenarios, define test objectives, and prioritize testing activities based on project goals and timelines. Writing derived test cases.
