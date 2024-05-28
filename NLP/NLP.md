@@ -610,7 +610,9 @@ Imagine you’re looking at a picture of a park with lots of dogs and people. No
 
 * An attention map is like a map of the picture that shows where you focused your attention when looking for the yellow balls. It would highlight areas with yellow balls and dim down the rest. In machine learning, an attention map visually represents where the model is focusing its attention in the data to make decisions or predictions. So, using the same example, the attention map would highlight the parts of the input (the picture) that the model thinks are important for finding yellow balls, helping us understand why the model makes its decisions.
 
-![Alt text](<images/attentions.jpeg>)
+
+<img width="842" alt="Screenshot 2024-05-28 at 11 18 07" src="https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/39ea0c78-c64e-43aa-8647-a35a9cbb803a">
+
 
 You can focus at a high level on where these processes are taking place.
 
