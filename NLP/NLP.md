@@ -41,10 +41,6 @@ As NLP techniques continue to advance, they enable more natural and effective co
 
 RNN - https://www.kdnuggets.com/comparing-natural-language-processing-techniques-rnns-transformers-bert
 
-- **Development and Adoption:** 
-  - Recurrent Neural Networks (RNN) were initially developed in 1980.
-  - However, they have only gained significant attention in the field of Natural Language Processing (NLP) in recent years.
-
 - **Purpose and Application:**
   - RNNs are a specific type within the neural network family.
   - They are primarily used for processing sequential data.
@@ -102,8 +98,49 @@ This flexibility in handling variable-length sequences makes RNNs well-suited fo
 
  - Short-term memory means that the model starts to forget the longer the model is trained. There is an extension of RNN called LSTM to alleviate this problem.
 
+# RNN vs LSTM: Memory and Differences
 
-What is vanishing gradient problem ? 
+## Memory in RNNs
+
+**RNNs (Recurrent Neural Networks)**:
+- **Memory Capability**: RNNs have a form of memory, as they use their internal state (hidden state) to process sequences of data. This internal state allows them to capture information from previous time steps.
+- **Challenges**: RNNs struggle with long-term dependencies due to the vanishing gradient problem, where gradients become very small during backpropagation, making it difficult to learn from distant past data.
+
+**LSTMs (Long Short-Term Memory Networks)**:
+- **Memory Capability**: LSTMs are designed to overcome the limitations of RNNs by introducing a more complex memory mechanism. They have cells that can store information for long periods and gates to control the flow of information, which helps in learning long-term dependencies.
+- **Advantages**: LSTMs can retain information over longer sequences and are less susceptible to the vanishing gradient problem.
+
+## Differences Between RNN and LSTM
+
+| Feature                          | RNN (Recurrent Neural Network) | LSTM (Long Short-Term Memory)         |
+|----------------------------------|---------------------------------|---------------------------------------|
+| **Architecture**                 | Simple recurrent structure with one hidden state. | More complex structure with cells, and three gates (input, output, forget). |
+| **Memory Capability**            | Limited, short-term memory.     | Enhanced, long-term memory.           |
+| **Components**                   | Hidden state.                   | Cell state, hidden state, input gate, forget gate, output gate. |
+| **Gradient Issues**              | Prone to vanishing gradient problem. | Designed to mitigate vanishing gradient problem. |
+| **Long-Term Dependencies**       | Struggles with learning long-term dependencies. | Effective at learning long-term dependencies. |
+| **Complexity**                   | Simpler, fewer parameters.      | More complex, more parameters.        |
+| **Training Time**                | Generally faster to train.      | Slower to train due to complexity.    |
+| **Usage**                        | Suitable for simple sequences where short-term context is sufficient. | Suitable for complex sequences where long-term context is important. |
+| **Applications**                 | Basic sequence modeling tasks, simple time series. | Complex sequence modeling tasks, speech recognition, language modeling, time series prediction. |
+| **Memory Gates**                 | No gates for memory control.    | Uses gates to control information flow (input, forget, output gates). |
+| **Cell State**                   | No explicit cell state.         | Maintains an explicit cell state for long-term memory. |
+
+## Explanation of LSTM Components
+
+- **Cell State**: The long-term memory of the network that carries information across different time steps. It is modified by the gates.
+- **Hidden State**: The short-term memory of the network that is used for the current output.
+- **Input Gate**: Controls how much of the new information from the current input and previous hidden state should be added to the cell state.
+- **Forget Gate**: Decides how much of the information in the cell state should be discarded.
+- **Output Gate**: Determines the output based on the cell state and hidden state.
+
+## Summary
+
+While both RNNs and LSTMs have memory capabilities, LSTMs are designed to handle long-term dependencies more effectively due to their specialized structure with gates and cell states. This makes LSTMs more suitable for tasks that require understanding and retaining long-term context, whereas RNNs might be sufficient for simpler tasks with short-term dependencies.
+
+
+
+## What is vanishing gradient problem ? 
 The vanishing gradient problem refers to the issue where gradients become very small during the training of deep neural networks, especially in networks with many layers. These tiny gradients make it difficult for the model to learn effectively, as they provide little information for updating the parameters of earlier layers in the network. This can lead to slow or stalled learning and prevents the network from capturing meaningful patterns in the data.
 
 When training a neural network using backpropagation, the gradients of the
