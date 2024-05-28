@@ -661,7 +661,9 @@ The Transformer consists of an encoder and a decoder, each made up of layers con
 
 
 
-### Resources 
+### Resources
+
+https://jalammar.github.io/illustrated-transformer/
 https://medium.com/@amanatulla1606/transformer-architecture-explained-2c49e2257b4c
 
 
