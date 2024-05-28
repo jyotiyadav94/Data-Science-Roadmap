@@ -312,6 +312,7 @@ It's worth noting that while Bi-LSTMs have been successful in many sequence mode
 
 Resources - https://www.analyticsvidhya.com/blog/2019/06/understanding-transformers-nlp-state-of-the-art-models/
 
+Transformers are a type of neural network architecture that have revolutionized natural language processing (NLP) and other fields in machine learning since their introduction in the paper "Attention is All You Need" by Vaswani et al. in 2017. Here’s an overview of the key concepts and components:
 Transformers have this attention mechanism is a crucial component in improving the performance of encoder-decoder architectures, especially in handling long input sequences.
 
 Transformers is an NLP model architecture that tries to solve the sequence-to-sequence tasks previously encountered in the RNNs. As mentioned above, RNNs have problems with short-term memory. The longer the input, the more prominent the model was in forgetting the information. This is where the attention mechanism could help solve the problem.
