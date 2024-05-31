@@ -97,7 +97,6 @@ https://www.promptingguide.ai/techniques/react
 * Data Management: Constructed an end-to-end data pipeline for seamless data management and processing.
 
 
-
 Proejct2: Document Classification and Information Extraction from documents:
 Model Development:
 * Developed a model to classify pages within PDF documents and extract information.
@@ -109,7 +108,6 @@ Performance:
 * Achieved an F1 score of approximately 94%.
 * Model capable of classifying pages and extracting information.
 Additionally, Dataset preparation was a huge problem for us at the beginning. So we create a semi-automatic tool which helps us to prepare a larger base of dataset. So basically the model was trained with close to 20 documents and we used the same model to do predictions on other documents. After predictions we did a manual review for the documents correctly annotated.
-
 
 
 Project3: Named Entity Recognition (NER) and Dataset Annotation:
@@ -224,7 +222,7 @@ Hola
 Mi nombre es jyoti yadav. Yo soy de India. Yo vivo en Italia. Tengo 30 años de edad. Soy un científico de datos.
 gracias.
 
-# 9. Applying Machine Learning in cherryNPL?
+# 9. Applying Machine Learning in X?
 
 
 
