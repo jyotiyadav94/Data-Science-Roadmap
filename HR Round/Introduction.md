@@ -191,45 +191,8 @@ Overall, my goal is to make a significant impact in the field of data science by
 * I value the opportunity to educate my peers on the benefits of machine learning models and algorithms. Guiding colleagues in building intelligent algorithms that transform and enhance our business is a responsibility I am keen to take on.
 
 
-# 6. What do you know about the company / Why do you want to work for CARTIF ? 
+# 6. What do you know about the company / Why do you want to work for ? ? 
 
-I understand that CARTIF, established in 1994 and located in the Boecillo Technology Park in Valladolid, Spain, is a prominent Technology Centre dedicated to applied research. It operates as a Foundation, which provides a stable and mission-driven governance structure. CARTIF’s main goals are to identify technological needs, develop R&D-based knowledge, support technological innovation in industry—particularly among small and medium-sized enterprises (SMEs)—and disseminate R&D and innovation outcomes.
-
-CARTIF is highly active in research and development, undertaking over 100 R&D and innovation projects annually, serving a similar number of customers. The organization employs around 200 individuals, including engineers, scientists, and senior researchers, which ensures high-quality outcomes for its projects.
-
-The research areas that CARTIF focuses on are quite diverse. These include:
-
-* Industry 4.0: Integrating digital technologies into manufacturing processes.
-* Energy and Environment: Developing sustainable energy solutions and environmental protection technologies.
-* Construction and Infrastructure: Innovating building techniques and infrastructure development.
-* Agrofood: Enhancing agricultural and food production processes.
-* Health and Quality of Life: Improving healthcare technologies and solutions for better living standards.
-
-Governance at CARTIF is robust, with a board comprising 30 organizations from various sectors, such as SMEs, large industrial companies, and universities. This ensures a balanced representation of private, public, and academic interests. CARTIF is also well-integrated into several research and professional networks, both nationally and internationally, participating in 20 such networks, including 13 international ones.
-
-Artificial Intelligence (AI) is playing a transformative role in the energy sector, enhancing efficiencies, reducing costs, and promoting sustainability. The top ten applications of AI in this sector illustrate its wide-ranging impact, from smart grid management to renewable energy forecasting, and even nuclear power plant safety. Here's a detailed look at these applications:
-
-* Smart Grids: AI manages smart grids by predicting consumption patterns using historical and real-time data, optimizing resource allocation during high demand periods, and detecting faults or disruptions to improve grid reliability.
-
-* Demand Response Management: AI optimizes electricity consumption by adjusting usage based on signals from grid operators, balancing supply and demand during peak periods, and reducing the need for infrastructure upgrades.
-
-* Predictive Maintenance: By analyzing data from various sources, AI predicts when equipment is likely to fail, minimizing downtime, reducing repair costs, and improving the reliability of energy infrastructure.
-
-* Renewable Energy Forecasting: AI forecasts renewable energy generation by analyzing weather forecasts and historical data, helping to balance supply and demand more effectively for variable sources like wind and solar.
-
-* Energy Storage: AI optimizes energy storage by determining the best times to store and release energy, enhancing the reliability of renewable sources and ensuring a steady power supply for critical facilities.
-
-* Carbon Capture, Utilization, and Storage (CCUS): AI enhances the efficiency of CCUS processes by optimizing carbon capture methods and identifying suitable utilization or storage solutions, reducing greenhouse gas emissions.
-
-* Energy Trading: AI analyzes market dynamics, processes real-time data on pricing and demand, and executes trades at high speeds, improving decision-making, risk management, and profitability in energy trading.
-
-* Smart Homes and Buildings: AI integrates with smart meters and IoT devices to create energy-efficient ecosystems, optimizing heating, cooling, and other energy-consuming systems based on real-time data and user preferences.
-
-* Oil and Gas Exploration: AI analyzes geological data to identify potential reserves, assesses their viability, and guides exploration efforts. It also predicts risks in drilling operations, enhancing safety and efficiency.
-
-* Nuclear Power Plant Monitoring: AI continuously monitors plant operations, detecting anomalies and predicting equipment failures, thus maintaining high safety standards and preventing accidents.
-
-These applications demonstrate how AI is not only improving efficiency and reliability across the energy sector but also driving the transition towards more sustainable and secure energy systems.
 
 
 # 7. What are your strength and weakness ? 
@@ -250,7 +213,7 @@ Weakness :
 2. Over-burden: This can be overcome by delegating tasks to other team members as well. 
 
 
-# 8. Why would you like to move to Spain? 
+# 8. Why would you like to move to countryX? 
 I am a young single guy and I want to explore the world and live in different locations and experience different cultures while I'm young. I have been there in spain for 3 months in Barcelona. I really like the atmosphere around. People are very welcoming & had a good experience with the cuisine.
 On a personal level, I have always been fascinated by Spanish culture, history, and language. The vibrant lifestyle, rich cultural heritage, and beautiful landscapes are incredibly appealing. Living in Spain would provide a wonderful opportunity for personal growth, allowing me to immerse myself in a new culture and improve my Spanish language skills. The prospect of experiencing Spanish cuisine, traditions, and the welcoming nature of its people is something I look forward to.
 
