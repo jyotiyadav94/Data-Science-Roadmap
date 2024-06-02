@@ -2,8 +2,7 @@
 
 ## About
 
-Hello, Good afternoon! My name is Jyoti Yadav. I am from India. I completed my bachelor's degree in 2016 in Electronics & Communications Engineering from India.
-I have a total of 4 years of work experience in India as a software engineer & Almost close to 2 years of work experience as a Data Scientist.
+Hello, Good afternoon! My name is Jyoti Yadav. I am from India. I have a total of 4 years of work experience in India as a software engineer & Almost close to 2 years of work experience as a Data Scientist.I completed my bachelor's degree in 2016 in Electronics & Communications Engineering from India.
 
 
 ### HPE (Hewlett Packard Enterprise)
