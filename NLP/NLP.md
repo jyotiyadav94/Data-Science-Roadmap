@@ -530,20 +530,19 @@ Let's take the sentence: "Hello, how are you?"
 
 Libraries like Hugging Face’s Transformers provide an easy-to-use tokenizer for BERT.
 
-python
 from transformers import BertTokenizer
 
-# Initialize the tokenizer
+### Initialize the tokenizer
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
-# Example text
+###  Example text
 text = "Hello, how are you?"
 
-# Tokenize the text
+###  Tokenize the text
 tokens = tokenizer.tokenize(text)
 print("Tokens:", tokens)
 
-# Convert tokens to input IDs
+###  Convert tokens to input IDs
 input_ids = tokenizer.encode(text, add_special_tokens=True)
 print("Input IDs:", input_ids)
 
@@ -586,31 +585,26 @@ Token classification is used for tasks like Named Entity Recognition (NER), wher
 4. *Train the Model*: Train the model on your labeled dataset.
 
 #### Example Code
-
-python
 from transformers import BertTokenizer, BertForTokenClassification
 import torch
 
-# Load pre-trained model and tokenizer
+###  Load pre-trained model and tokenizer
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertForTokenClassification.from_pretrained('bert-base-uncased', num_labels=num_labels)
 
-# Example text
+###  Example text
 text = "Hello, how are you?"
 
-# Tokenize text
+###  Tokenize text
 inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
 input_ids = inputs['input_ids']
 attention_mask = inputs['attention_mask']
 
-# Forward pass (during training)
+###  Forward pass (during training)
 outputs = model(input_ids, attention_mask=attention_mask)
 logits = outputs.logits
 
-# logits now contain the classification scores for each token
-
-
-In the training loop, you would compare these logits to the true labels and compute the loss to update the model weights.
+###  logits now contain the classification scores for each token
 
 ### Sequence Classification
 
@@ -627,23 +621,23 @@ python
 from transformers import BertTokenizer, BertForSequenceClassification
 import torch
 
-# Load pre-trained model and tokenizer
+###  Load pre-trained model and tokenizer
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=num_labels)
 
-# Example text
+###  Example text
 text = "I love this movie!"
 
-# Tokenize text
+###  Tokenize text
 inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
 input_ids = inputs['input_ids']
 attention_mask = inputs['attention_mask']
 
-# Forward pass (during training)
+###  Forward pass (during training)
 outputs = model(input_ids, attention_mask=attention_mask)
 logits = outputs.logits
 
-# logits now contain the classification scores for the entire sequence
+###  logits now contain the classification scores for the entire sequence
 
 
 Again, during training, you would compute the loss between the logits and the true label for the sequence.
