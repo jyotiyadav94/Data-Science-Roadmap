@@ -394,35 +394,279 @@ There are still some disadvantages to the transformers model:
 
 # BERT (Bidirectional Search)
 
-BERT, or Bidirectional Encoder Representations from Transformers, is a model developed by Devlin et al. (2019) that involves two steps (pre-training and fine-tuning) to create the model. If we compare, BERT is a stack of transformers encoder (BERT Base has 12 Layers while BERT Large has 24 layers).
+### What is BERT?
 
-BERT's overall model development can be shown in the image below.
+BERT stands for Bidirectional Encoder Representations from Transformers. It's a type of machine learning model designed for natural language processing tasks like understanding text.
+Imagine a sentence: “She plays the violin beautifully.” Traditional language models would process this sentence from left to right, missing the crucial fact that the identity of the instrument (“violin”) impacts the interpretation of the entire sentence. BERT read it from both the sides left and the right. BERT, however, understands that the context-driven relationship between words plays a pivotal role in deriving meaning. It captures the essence of bidirectionality, allowing it to consider the complete context surrounding each word, revolutionizing the accuracy and depth of language understanding.
 
 ![Alt text](<images/BERT.png>)
 
-Pre-training tasks initiate the model's training at the same time, and once it is done, the model can be fine-tuned for various downstream tasks (question-answering, classification, etc.). 
+### How BERT Works Conceptually
 
-What makes BERT special is that it is the first unsupervised bidirectional language model that is pre-trained on text data. BERT was previously pre-trained on the entire Wikipedia and book corpus, consisting of over 3000 million words. 
+1. *Text Input*: BERT takes in text as input. This text is broken down into smaller parts called tokens (usually words or subwords).
 
-BERT is considered bidirectional because it didn’t read data input sequentially (from left to right or vice versa), but the transformer encoder read the whole sequence simultaneously.
+2. *Tokenization*: The text is tokenized, which means it's split into tokens. Special tokens like [CLS] (for classification) and [SEP] (to separate sentences) are added.
 
-Unlike directional models, which read the text input sequentially (left-to-right or right-to-left), the Transformer encoder reads the entire sequence of words simultaneously. That’s why the model is considered bidirectional and allows the model to understand the whole context of the input data. 
+3. *Embedding*: Each token is converted into a numerical vector (embedding). These vectors represent the meaning of the tokens in a way the model can understand.
 
-To achieve bidirectional, BERT uses two techniques:
+4. *Transformer Layers*: The tokens pass through multiple transformer layers. These layers help the model understand the context of each token by looking at the tokens around it (both before and after). This is what makes BERT bidirectional.
 
-**Mask Language Model (MLM)**  — Word masking technique. The technique would mask 15% of the input words and try to predict this masked word based on the non-masked word.
+5. *Attention Mechanism*: Within each transformer layer, an attention mechanism helps the model focus on important tokens in the context. It calculates the importance of each token relative to others.
 
-**Next Sentence Prediction (NSP)** —  BERT tries to learn the relationship between sentences. The model has pairs of sentences as the data input and tries to predict if the subsequent sentence exists in the original document.
-There are a few advantages to using BERT in the NLP field, including:
+6. *Output Representation*: After passing through the transformer layers, each token has a new representation that captures its meaning in context. The [CLS] token's representation is often used for tasks like classification.
 
-BERT is easy to use for pre-trained various NLP downstream tasks.
-Bidirectional makes BERT understand the text context better.
-It’s a popular model that has much support from the community
-Although, there are still a few disadvantages, including:
+### Using BERT for Token and Sequence Classification
 
-Requires high computational power and long training time for some downstream task fine-tuning.
-The BERT model might result in a big model requiring much bigger storage.
-It’s better to use for complex tasks as the performance for simple tasks is not much different than using simpler models.
+1. *Token Classification*: This is used for tasks like Named Entity Recognition (NER), where you classify each token (word) in a sentence. 
+    - *Process*: Each token's output representation from BERT is fed into a classifier to predict a label (like "Person" or "Location").
+    - *Example*: In the sentence "John lives in New York," BERT can classify "John" as a "Person" and "New York" as a "Location."
+
+2. *Sequence Classification*: This is used for tasks like sentiment analysis, where you classify the entire sentence.
+    - *Process*: The [CLS] token's representation is fed into a classifier to predict the label (like "Positive" or "Negative").
+    - *Example*: In the sentence "I love this movie," BERT can classify it as having a "Positive" sentiment.
+
+### Steps to Use BERT
+
+1. *Load Pre-trained Model*: Use a pre-trained BERT model available from libraries like Hugging Face’s Transformers.
+
+2. *Tokenization*: Tokenize your text using BERT’s tokenizer to prepare it for the model.
+
+3. *Model Input*: Pass the tokenized text into BERT.
+
+4. *Feature Extraction*: Extract the output representations for each token or the [CLS] token for the entire sequence.
+
+5. *Classification Layer*: Add a classification layer on top of BERT’s output to predict labels for tokens or the entire sequence.
+
+6. *Training*: Train the model on your specific dataset if fine-tuning is needed.
+
+### Example of Usage
+
+For token classification (NER):
+- Tokenize the sentence.
+- Pass tokens through BERT.
+- Use the token representations to classify each token.
+
+For sequence classification (Sentiment Analysis):
+- Tokenize the sentence.
+- Pass tokens through BERT.
+- Use the [CLS] token representation to classify the sentence.
+
+BERT has two main objectives during its pre-training phase: *Masked Language Modeling (MLM)* and *Next Sentence Prediction (NSP)*. These objectives help BERT to learn rich representations of text that can be fine-tuned for various downstream tasks.
+
+### 1. Masked Language Modeling (MLM)
+
+*Objective*: To predict a randomly masked token in a sequence.
+
+*How It Works*:
+- A portion of the input tokens is randomly masked (replaced with a special [MASK] token).
+- The model attempts to predict the original token based on the context provided by the surrounding tokens.
+
+*Example*:
+- Input Sentence: "The cat sits on the [MASK]."
+- Goal: Predict that [MASK] should be "mat".
+
+This allows BERT to learn bidirectional representations of text, meaning it can understand the context from both the left and the right of a given token.
+
+### 2. Next Sentence Prediction (NSP)
+
+*Objective*: To predict if a given pair of sentences is consecutive in the original text or not.
+
+*How It Works*:
+- During training, the model is fed pairs of sentences.
+- 50% of the time, the second sentence is the actual next sentence in the text.
+- 50% of the time, the second sentence is a random sentence from the corpus.
+- The model learns to predict whether the second sentence follows the first one.
+
+*Example*:
+- Sentence A: "The cat sits on the mat."
+- Sentence B (Positive Example): "It purrs softly."
+- Sentence B (Negative Example): "The sky is blue."
+
+*Goal*:
+- For the positive example, the model should predict that the second sentence follows the first.
+- For the negative example, the model should predict that the second sentence does not follow the first.
+
+### Purpose of These Objectives
+
+1. *MLM*: Enables BERT to understand context from both directions, making it more effective for tasks requiring a deep understanding of language, like question answering and sentiment analysis.
+
+2. *NSP*: Helps BERT understand relationships between sentences, which is crucial for tasks like natural language inference and paragraph-level reasoning.
+
+By training on these objectives, BERT becomes a powerful model capable of handling various NLP tasks through fine-tuning. The pre-training phase allows BERT to develop a strong foundational understanding of language, which can then be specialized to specific tasks with further training.
+
+### What is a Tokenizer?
+
+A Tokenizer is a tool that splits text into smaller pieces called tokens. Tokens can be words, subwords, or even characters. This process is essential for feeding text into models like BERT, which require numerical input rather than raw text.
+
+### How Does Tokenization Work?
+
+1. *Splitting Text*: The tokenizer breaks the input text into tokens. In BERT's case, this often involves splitting on spaces and punctuation.
+
+2. *Mapping to IDs*: Each token is mapped to a unique numerical ID from a predefined vocabulary that the model understands.
+
+3. *Handling Special Tokens*: The tokenizer adds special tokens like [CLS] at the beginning and [SEP] at the end of the input text to help the model understand sentence boundaries and context.
+
+4. *Padding and Truncation*: Sentences are often padded to a fixed length with a [PAD] token or truncated if they exceed a maximum length.
+
+### Example of Tokenization
+
+Let's take the sentence: "Hello, how are you?"
+
+1. *Splitting Text*: 
+   - Original sentence: "Hello, how are you?"
+   - Tokens: ["Hello", ",", "how", "are", "you", "?"]
+
+2. *Adding Special Tokens*:
+   - Tokens with special tokens: ["[CLS]", "Hello", ",", "how", "are", "you", "?", "[SEP]"]
+
+3. *Mapping to IDs*:
+   - Each token is mapped to an ID from the vocabulary.
+   - Example mapping (IDs are illustrative): [CLS] = 101, "Hello" = 7592, "," = 1010, "how" = 2129, "are" = 2024, "you" = 2017, "?" = 1029, [SEP] = 102
+
+4. *Final Token IDs*:
+   - [101, 7592, 1010, 2129, 2024, 2017, 1029, 102]
+
+### Using BERT Tokenizer
+
+Libraries like Hugging Face’s Transformers provide an easy-to-use tokenizer for BERT.
+
+python
+from transformers import BertTokenizer
+
+# Initialize the tokenizer
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+
+# Example text
+text = "Hello, how are you?"
+
+# Tokenize the text
+tokens = tokenizer.tokenize(text)
+print("Tokens:", tokens)
+
+# Convert tokens to input IDs
+input_ids = tokenizer.encode(text, add_special_tokens=True)
+print("Input IDs:", input_ids)
+
+
+### How Tokenizer Works for BERT Tasks
+
+1. *Preparation*: Tokenizer processes the input text, splitting it into tokens and adding special tokens like [CLS] and [SEP].
+
+2. *Conversion*: Each token is converted into a numerical ID based on BERT's vocabulary.
+
+3. *Padding/Truncation*: The sequence is padded or truncated to a fixed length to match the model’s input requirements.
+
+4. *Attention Masks*: Along with input IDs, the tokenizer often generates attention masks, indicating which tokens are actual data and which are padding.
+
+### Examples of Tokenizer Output
+
+For the text "Hello, how are you?":
+
+- *Tokens*: ['hello', ',', 'how', 'are', 'you', '?']
+- *Input IDs*: [101, 7592, 1010, 2129, 2024, 2017, 1029, 102]
+- *Attention Mask*: [1, 1, 1, 1, 1, 1, 1, 1] (indicating all tokens are actual data, no padding in this short example)
+
+### Working of Tokenizer in BERT
+
+1. *Text Input*: You provide the raw text.
+2. *Tokenization*: The tokenizer breaks the text into tokens and adds special tokens.
+3. *ID Conversion*: Tokens are converted to numerical IDs.
+4. *Attention Masks*: These masks indicate the real tokens versus any padding.
+5. *Model Input*: The IDs and masks are fed into BERT for processing.
+
+By handling tokenization, the tokenizer prepares the text in a format that BERT can understand and work with effectively, ensuring that the model can perform tasks like classification or token prediction accurately.
+
+### Token Classification
+
+Token classification is used for tasks like Named Entity Recognition (NER), where each token in a sequence needs a label.
+
+1. *Load Pre-trained BERT Model*: Use a pre-trained BERT model and tokenizer.
+2. *Prepare Data*: Tokenize the input text. Ensure that each token in the original text is correctly aligned with the tokens produced by the tokenizer.
+3. *Add Classification Layer*: Add a classification layer on top of BERT to predict labels for each token.
+4. *Train the Model*: Train the model on your labeled dataset.
+
+#### Example Code
+
+python
+from transformers import BertTokenizer, BertForTokenClassification
+import torch
+
+# Load pre-trained model and tokenizer
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertForTokenClassification.from_pretrained('bert-base-uncased', num_labels=num_labels)
+
+# Example text
+text = "Hello, how are you?"
+
+# Tokenize text
+inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
+input_ids = inputs['input_ids']
+attention_mask = inputs['attention_mask']
+
+# Forward pass (during training)
+outputs = model(input_ids, attention_mask=attention_mask)
+logits = outputs.logits
+
+# logits now contain the classification scores for each token
+
+
+In the training loop, you would compare these logits to the true labels and compute the loss to update the model weights.
+
+### Sequence Classification
+
+Sequence classification is used for tasks like sentiment analysis, where you classify the entire sequence.
+
+1. *Load Pre-trained BERT Model*: Use a pre-trained BERT model and tokenizer.
+2. *Prepare Data*: Tokenize the input text. Ensure the [CLS] token is at the beginning of the sequence.
+3. *Add Classification Layer*: Add a classification layer on top of BERT to predict a single label for the entire sequence.
+4. *Train the Model*: Train the model on your labeled dataset.
+
+#### Example Code
+
+python
+from transformers import BertTokenizer, BertForSequenceClassification
+import torch
+
+# Load pre-trained model and tokenizer
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=num_labels)
+
+# Example text
+text = "I love this movie!"
+
+# Tokenize text
+inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True)
+input_ids = inputs['input_ids']
+attention_mask = inputs['attention_mask']
+
+# Forward pass (during training)
+outputs = model(input_ids, attention_mask=attention_mask)
+logits = outputs.logits
+
+# logits now contain the classification scores for the entire sequence
+
+
+Again, during training, you would compute the loss between the logits and the true label for the sequence.
+
+### Using BERT for Different Tasks
+
+The flexibility of BERT allows it to be adapted for various NLP tasks by adding appropriate layers on top of the BERT base. Here are a few common tasks and how to set up BERT for them:
+
+1. *Token Classification*: Add a token-level classification layer to predict labels for each token.
+2. *Sequence Classification*: Add a sequence-level classification layer to predict a single label for the entire input text.
+3. *Question Answering*: Add layers to predict the start and end positions of the answer span within the text.
+4. *Text Generation*: Fine-tune BERT as a language model to generate text sequences.
+5. *Text Pair Classification*: Use BERT for tasks like paraphrase identification or entailment, where two text sequences are classified as related or not.
+
+### General Steps for Any Task
+
+1. *Load Pre-trained BERT*: Use the base BERT model and tokenizer from a library like Hugging Face.
+2. *Prepare Data*: Tokenize your input text. Ensure special tokens are added correctly.
+3. *Add Task-specific Layers*: Depending on the task, add the necessary classification or regression layers on top of BERT.
+4. *Train the Model*: Fine-tune the model on your specific dataset by training it with the appropriate loss function and optimizer.
+5. *Evaluate and Predict*: Use the trained model to make predictions on new data.
+
+By following these steps, you can adapt a pre-trained BERT model for a variety of NLP tasks, even if you don't know exactly how it was originally trained.
 
 
 # RO-BERTA 
