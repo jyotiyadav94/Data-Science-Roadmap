@@ -663,6 +663,28 @@ The flexibility of BERT allows it to be adapted for various NLP tasks by adding 
 By following these steps, you can adapt a pre-trained BERT model for a variety of NLP tasks, even if you don't know exactly how it was originally trained.
 
 
+## Difference between Byte Pair Encoding , TikToken & WordPiece Tokenizer?
+### Byte Pair Encoding (BPE)
+
+# Tokenization Techniques Comparison
+
+This document compares three different tokenization techniques used in natural language processing: Byte Pair Encoding (BPE), TikToken, and WordPiece Tokenizer.
+
+| **Aspect**                | **Byte Pair Encoding (BPE)**                                     | **TikToken**                                               | **WordPiece Tokenizer**                                     |
+|---------------------------|------------------------------------------------------------------|------------------------------------------------------------|-------------------------------------------------------------|
+| **Concept**               | Compression technique adapted for NLP tokenization.             | Tokenizer used specifically with OpenAI's GPT models.      | Subword tokenization technique developed for neural machine translation. |
+| **Initialization**        | Start with individual characters.                               | Uses a pre-defined vocabulary tailored for GPT models.     | Start with individual characters and special unknown token. |
+| **Merging Process**       | Iteratively merge the most frequent pair of tokens.             | Uses a variant of BPE optimized for model performance.     | Iteratively add the most probable subword units based on maximum likelihood. |
+| **Example Dataset**       | `low`, `lowest`, `new`, `wider`                                 | "Hello world!"                                             | `low`, `lowest`, `new`, `wider`                             |
+| **Initial Tokens**        | `l o w`, `l o w e s t`, `n e w`, `w i d e r`                    | `Hello world!` -> `['Hello', ' world', '!']`               | `l o w`, `l o w e s t`, `n e w`, `w i d e r`                |
+| **Merging Step 1**        | Merge `lo` to form `lo w`, `lo w e s t`, `n e w`, `w i d e r`   | Tokens are already optimized: `['Hello', ' world', '!']`   | Merge `lo` to form `lo w`, `lo w e s t`, `n e w`, `w i d e r` |
+| **Merging Step 2**        | Merge `ow` to form `l ow`, `l ow e s t`, `n e w`, `w i d e r`   | No additional merging needed as tokens are pre-defined.    | Add `low` to form `low`, `low e s t`, `n e w`, `w i d e r`  |
+| **Final Tokens**          | `low`, `lowest`, `new`, `wider`                                 | `['Hello', ' world', '!']`                                 | `low`, `lowest`, `new`, `wider`                             |
+| **Used In**               | Models like GPT-2, and other transformers.                      | OpenAI's GPT models (GPT-3, GPT-4).                        | Models like BERT, and other transformers.                   |
+| **Handling Rare Words**   | Breaks down into subword units.                                 | Breaks down into subword units, optimized for GPT.         | Breaks down into subword units based on probability.        |
+
+
+
 # RO-BERTA 
 
 Resources - https://www.analyticsvidhya.com/blog/2022/10/a-gentle-introduction-to-roberta/
