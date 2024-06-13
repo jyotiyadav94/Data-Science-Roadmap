@@ -852,6 +852,11 @@ RNNs were once the backbone of sequence modeling, designed to process data seque
 
 ## How attention works 
 
+Self-attention is like looking at different words within the same sentence and deciding how much importance to give to each word when understanding the meaning of the sentence. It helps the model consider the relationships between words within the text.
+We compare the words of sentence to the words of same sentence during computation.
+
+![image](https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/862a88fd-ce25-46c1-99ba-1c242612c66c)
+
 he attention mechanism in transformers works by assigning a weight to each input token based on its relevance to the current token being processed. Here's how it works:
 
 1. *Calculate Attention Scores*:
