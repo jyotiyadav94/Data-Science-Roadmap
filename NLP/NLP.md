@@ -875,6 +875,8 @@ he attention mechanism in transformers works by assigning a weight to each input
 4. *Repeat for Each Token*:
    - This process is repeated for each token in the sequence, allowing the model to consider the context of each token in relation to all other tokens.
 
+![image](https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/01a6fd60-a671-4997-8ca1-e86406b855f5)
+
 The importance of the attention mechanism in models like BERT lies in its ability to capture long-range dependencies and relationships between tokens in a sequence. By dynamically weighting the contributions of different tokens based on their relevance to each other, the attention mechanism enables the model to understand the context and meaning of the input text more effectively.
 
 
