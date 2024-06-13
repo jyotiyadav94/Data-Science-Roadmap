@@ -852,41 +852,29 @@ RNNs were once the backbone of sequence modeling, designed to process data seque
 
 ## How attention works 
 
-Attention mechanism allows models to focus on specific parts of input data.
-It assigns weights to different parts of input, emphasizing important features.
-Weights are learned during training based on relevance to the task.
-Attention helps models make more informed decisions by giving higher importance to relevant information.
-It improves performance in tasks like machine translation, summarization, and image captioning.
+he attention mechanism in transformers works by assigning a weight to each input token based on its relevance to the current token being processed. Here's how it works:
 
-## Advantages of Attention
-* Parallelization: Self-attention allows for the simultaneous processing of all parts of the input data, leading to significant improvements in training speed and efficiency.
+1. *Calculate Attention Scores*:
+   - To calculate attention scores, three vectors are generated for each input token: Query, Key, and Value. These vectors are derived from the input embeddings.
+   - The Query vector represents the token for which attention is being calculated.
+   - The Key vectors represent all tokens in the input sequence.
+   - The Value vectors contain the information the model needs to focus on.
+   - The attention scores are computed by taking the dot product of the Query vector with the Key vectors. This results in a score for each token indicating its relevance to the Query token.
 
-* Long-Range Dependencies: It can capture relationships between elements in a sequence regardless of their positional distance, overcoming a major limitation of earlier models like RNNs and LSTMs.
+2. *Apply Softmax*:
+   - The attention scores are then passed through a softmax function to obtain a probability distribution over all tokens. This ensures that the sum of attention weights is equal to 1.
 
+3. *Compute Weighted Sum*:
+   - Finally, the weighted sum of the Value vectors is computed using the attention scores. This produces the context vector, which contains information from the entire input sequence weighted by their relevance to the Query token.
 
-## Understanding Attention and Attention Map
+4. *Repeat for Each Token*:
+   - This process is repeated for each token in the sequence, allowing the model to consider the context of each token in relation to all other tokens.
 
-Imagine you’re looking at a picture of a park with lots of dogs and people. Now, if I ask you to find all the yellow balls in the picture, your brain automatically starts to focus on parts of the picture where yellow balls might be, ignoring most of the dogs and people. This focusing is like the attention mechanism in machine learning. It helps the model to focus on important parts of the data (in this case, the yellow balls) that are relevant to the task at hand, ignoring less relevant information (like the dogs and people).
-
-* An attention map is like a map of the picture that shows where you focused your attention when looking for the yellow balls. It would highlight areas with yellow balls and dim down the rest. In machine learning, an attention map visually represents where the model is focusing its attention in the data to make decisions or predictions. So, using the same example, the attention map would highlight the parts of the input (the picture) that the model thinks are important for finding yellow balls, helping us understand why the model makes its decisions.
+The importance of the attention mechanism in models like BERT lies in its ability to capture long-range dependencies and relationships between tokens in a sequence. By dynamically weighting the contributions of different tokens based on their relevance to each other, the attention mechanism enables the model to understand the context and meaning of the input text more effectively.
 
 
 <img width="842" alt="Screenshot 2024-05-28 at 11 18 07" src="https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/39ea0c78-c64e-43aa-8647-a35a9cbb803a">
 
-
-You can focus at a high level on where these processes are taking place.
-
-The transformer architecture is split into two distinct parts, the encoder and the decoder.
-
-These components work in conjunction with each other and they share a number of similarities.
-
-As we all know, Machine learning models are like big computers that understand numbers but not words. So, before we can let these models work with text, we need to turn the words into numbers. This process is called tokenizing. It’s like giving each word a unique number based on a big list (dictionary) of all the words the model knows. This way, the model can understand and work with the text.
-
-Once the text input is represented as a number, this can be passed to the embedding layer.
-
-Every word (which we call a “token”) is turned into a small list of numbers known as a vector. These vectors are special because we can teach the computer to adjust them through a process called training. This means that as the computer learns more from the data it sees, it tweaks these numbers to get better at its job. This process of adjusting the numbers is what we refer to as “trainable vector embedding.” It’s a way of representing words in a form that computers can understand and learn from, improving their ability to process and make sense of text.
-
-Once we have the embedding, we can pass the embedding to the SELF — ATTENTION LAYER. The model analyses the relationship between the tokens in your input sequence.
 
 #### Understanding Multi Head Self Attention
 When we talk about processing language or images, there’s a cool technique called “Multi-Head Self Attention” that’s used the Transformer architecture.
