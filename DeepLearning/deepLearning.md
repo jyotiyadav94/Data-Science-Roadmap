@@ -473,3 +473,10 @@ d) The Regularisation hyper-parameter is quite large.
 e). The classic case of vanishing gradients
 
 # Why Sigmoid or Tanh is not preferred to be used as the activation function in the hidden layer of the neural network?
+
+
+
+# What is softmax function ?
+
+<img width="666" alt="image" src="https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/d199fffb-d17b-45b4-b29f-92b5de9d7669">
+
