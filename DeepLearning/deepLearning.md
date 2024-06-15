@@ -480,3 +480,6 @@ e). The classic case of vanishing gradients
 
 <img width="666" alt="image" src="https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/d199fffb-d17b-45b4-b29f-92b5de9d7669">
 
+# Loss functions in NN ?
+
+<img width="825" alt="image" src="https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/347c0667-cbb2-41f9-9c4a-1c6ccbde4632">
