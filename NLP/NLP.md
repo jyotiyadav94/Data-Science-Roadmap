@@ -77,6 +77,19 @@ Preprocessing techniques in Natural Language Processing (NLP) are crucial for pr
 5. The specific combination of techniques you use will depend on your task, the nature of your text data, and the requirements of your NLP models.
 
 
+# Explain Different word embeddings? 
+
+1. Bag of Words - It is a basic text representation technique in natural language processing. It transforms text into numerical. It takes into account the frequency of words within the corpus.
+<img width="918" alt="image" src="https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/0e008830-80e6-45e0-851e-13faab859441">
+
+2. TF-IDF - TF-IDF penalizes the common words by assigning them lower weights while giving importance to words rare words in the corpus
+<img width="1089" alt="image" src="https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/963bd229-4b42-4acd-ba79-e27b60270dae">
+
+3. Word2vec - It's a representation of words in a continuous vector space where words with similar meanings have similar vectors.
+Semantic Similarity: Captures semantic relationships between words.
+Dimensionality Reduction: Converts high-dimensional sparse vectors into dense, lower-dimensional vectors.
+Efficiency: Computationally efficient and scales well with large datasets.
+
 # Recurrent Neural Networks (RNN)
 
 RNN - https://www.kdnuggets.com/comparing-natural-language-processing-techniques-rnns-transformers-bert
