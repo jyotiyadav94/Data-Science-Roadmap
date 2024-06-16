@@ -37,7 +37,6 @@ NLP has numerous applications across various domains, including:
 * Intelligent writing assistants
 
 As NLP techniques continue to advance, they enable more natural and effective communication between humans and machines, leading to improved user experiences and increased productivity in various industries.
-# Recurrent Neural Networks (RNN)
 
 
 # NLP Preprocessing Techniques
@@ -140,6 +139,7 @@ Preprocessing techniques in Natural Language Processing (NLP) are crucial for pr
 These preprocessing techniques are often combined and customized based on the specific requirements of the NLP task and the nature of the text data.
 
 
+# Recurrent Neural Networks (RNN)
 
 RNN - https://www.kdnuggets.com/comparing-natural-language-processing-techniques-rnns-transformers-bert
 
