@@ -43,39 +43,38 @@ As NLP techniques continue to advance, they enable more natural and effective co
 
 Preprocessing techniques in Natural Language Processing (NLP) are crucial for preparing text data for analysis or model training. These techniques help clean, normalize, and transform the raw text into a structured format that can be effectively processed by NLP models. Below are the common preprocessing techniques applied in NLP:
 
-1. Cleaning and Normalization:
+### 1. Cleaning and Normalization:
+1. Lowercasing: Converts all text to lowercase to ensure consistency.
+2. Removal of Punctuation: Removes punctuation marks like commas, periods, and exclamation points, as they often don't carry significant meaning.
+3. Removal of Special Characters and Symbols: Eliminates non-alphanumeric characters like emojis, hashtags, or HTML tags.
+4. Handling Numbers: Deciding whether to keep, remove, or convert numbers to text representations (e.g., "10" to "ten").
+5. Removal of Extra Whitespace: Eliminates multiple spaces, tabs, and newline characters to standardize spacing.
+6. Handling Contractions: Expanding contractions (e.g., "don't" to "do not") for consistency or keeping them as is for certain tasks.
+7. Handling Accented Characters: Normalizing accented characters (e.g., "é" to "e") or preserving them depending on the language and task.
 
-Lowercasing: Converts all text to lowercase to ensure consistency.
-Removal of Punctuation: Removes punctuation marks like commas, periods, and exclamation points, as they often don't carry significant meaning.
-Removal of Special Characters and Symbols: Eliminates non-alphanumeric characters like emojis, hashtags, or HTML tags.
-Handling Numbers: Deciding whether to keep, remove, or convert numbers to text representations (e.g., "10" to "ten").
-Removal of Extra Whitespace: Eliminates multiple spaces, tabs, and newline characters to standardize spacing.
-Handling Contractions: Expanding contractions (e.g., "don't" to "do not") for consistency or keeping them as is for certain tasks.
-Handling Accented Characters: Normalizing accented characters (e.g., "é" to "e") or preserving them depending on the language and task.
-2. Tokenization:
+### 2. Tokenization:
+1. Word Tokenization: Splitting text into individual words.
+2. Sentence Tokenization: Splitting text into sentences.
+3. Subword Tokenization: Splitting words into smaller subword units (e.g., Byte Pair Encoding, WordPiece), especially useful for handling rare words and morphologically rich languages.
 
-Word Tokenization: Splitting text into individual words.
-Sentence Tokenization: Splitting text into sentences.
-Subword Tokenization: Splitting words into smaller subword units (e.g., Byte Pair Encoding, WordPiece), especially useful for handling rare words and morphologically rich languages.
-3. Stopword Removal:
+### 3. Stopword Removal:
+1. Filtering out common words: Removing high-frequency words that carry little semantic meaning (e.g., "the," "and," "is").
 
-Filtering out common words: Removing high-frequency words that carry little semantic meaning (e.g., "the," "and," "is").
 4. Stemming and Lemmatization:
+1. Stemming: Reducing words to their base or root form using heuristic rules (e.g., "running" -> "run"). Faster but less accurate.
+2. Lemmatization: Reducing words to their base or root form using dictionaries and morphological analysis (e.g., "better" -> "good"). More accurate but slower.
 
-Stemming: Reducing words to their base or root form using heuristic rules (e.g., "running" -> "run"). Faster but less accurate.
-Lemmatization: Reducing words to their base or root form using dictionaries and morphological analysis (e.g., "better" -> "good"). More accurate but slower.
-5. Text Normalization (Optional):
+### 5. Text Normalization (Optional):
+1. Spelling Correction: Correcting spelling errors.
+2. Handling Abbreviations and Acronyms: Expanding them to full forms or normalizing them.
+3. Handling Slang and Informal Language: Standardizing informal language or mapping it to formal equivalents.
 
-Spelling Correction: Correcting spelling errors.
-Handling Abbreviations and Acronyms: Expanding them to full forms or normalizing them.
-Handling Slang and Informal Language: Standardizing informal language or mapping it to formal equivalents.
-6. Noise Removal (Optional):
-
-Removal of URLs and Email Addresses: Eliminating web addresses and email addresses that might not be relevant to the task.
-Handling Code and Markup: Removing or processing code snippets or markup language tags.
-Handling Usernames and Mentions: Deciding whether to remove or normalize usernames and mentions in social media text.
-Handling Emojis and Emoticons: Removing them, converting them to text representations, or treating them as special tokens.
-The specific combination of techniques you use will depend on your task, the nature of your text data, and the requirements of your NLP models.
+### 6. Noise Removal (Optional):
+1. Removal of URLs and Email Addresses: Eliminating web addresses and email addresses that might not be relevant to the task.
+2. Handling Code and Markup: Removing or processing code snippets or markup language tags.
+3. Handling Usernames and Mentions: Deciding whether to remove or normalize usernames and mentions in social media text.
+4. Handling Emojis and Emoticons: Removing them, converting them to text representations, or treating them as special tokens.
+5. The specific combination of techniques you use will depend on your task, the nature of your text data, and the requirements of your NLP models.
 
 
 # Recurrent Neural Networks (RNN)
