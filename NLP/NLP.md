@@ -39,6 +39,108 @@ NLP has numerous applications across various domains, including:
 As NLP techniques continue to advance, they enable more natural and effective communication between humans and machines, leading to improved user experiences and increased productivity in various industries.
 # Recurrent Neural Networks (RNN)
 
+
+# NLP Preprocessing Techniques
+
+Preprocessing techniques in Natural Language Processing (NLP) are crucial for preparing text data for analysis or model training. These techniques help clean, normalize, and transform the raw text into a structured format that can be effectively processed by NLP models. Below are the common preprocessing techniques applied in NLP:
+
+## Text Cleaning
+
+### Lowercasing
+- Convert all characters in the text to lowercase to maintain consistency and reduce the number of unique tokens.
+- Example: "Hello World!" -> "hello world!"
+
+### Removing Punctuation
+- Remove punctuation marks from the text as they often do not contribute to the semantic meaning.
+- Example: "Hello, world!" -> "Hello world"
+
+### Removing Numbers
+- Remove numerical digits from the text unless they are relevant to the analysis.
+- Example: "My phone number is 1234567890" -> "My phone number is"
+
+### Removing Special Characters
+- Remove special characters and symbols to clean the text.
+- Example: "Hello @world#123!" -> "Hello world"
+
+### Removing Whitespace
+- Remove extra whitespaces, including leading, trailing, and multiple spaces between words.
+- Example: "Hello    world" -> "Hello world"
+
+### Removing HTML Tags
+- Remove HTML tags if the text contains HTML code.
+- Example: "<p>Hello world</p>" -> "Hello world"
+
+## Text Normalization
+
+### Stemming
+- Reduce words to their root form by removing suffixes. The result may not be a real word.
+- Example: "running" -> "run"
+
+### Lemmatization
+- Reduce words to their base or dictionary form (lemma) using morphological analysis.
+- Example: "running" -> "run"
+
+### Removing Stop Words
+- Remove common words that do not contribute significant meaning, such as "and," "is," "in."
+- Example: "This is a sample sentence" -> "sample sentence"
+
+## Tokenization
+
+### Word Tokenization
+- Split text into individual words or tokens.
+- Example: "Hello world" -> ["Hello", "world"]
+
+### Sentence Tokenization
+- Split text into individual sentences.
+- Example: "Hello world. How are you?" -> ["Hello world.", "How are you?"]
+
+## Text Transformation
+
+### N-grams
+- Generate contiguous sequences of n items from a given text. Commonly used n-grams include bigrams (2 words) and trigrams (3 words).
+- Example: "Hello world" -> [("Hello", "world")]
+
+### Bag of Words (BoW)
+- Represent text as a collection of its words, ignoring grammar and word order but keeping multiplicity.
+- Example: ["cat", "sat", "mat", "cat"] -> {"cat": 2, "sat": 1, "mat": 1}
+
+### TF-IDF (Term Frequency-Inverse Document Frequency)
+- Represent text by considering the importance of words in a document relative to a corpus. It reduces the weight of commonly used words.
+- Example: Calculate TF-IDF scores for each word in the document.
+
+## Advanced Preprocessing
+
+### Word Embeddings
+- Represent words in a dense vector space where semantically similar words are close together. Common embeddings include Word2Vec, GloVe, and fastText.
+- Example: "king" -> [0.123, 0.456, ..., 0.789]
+
+### Handling Out-of-Vocabulary (OOV) Words
+- Develop strategies to handle words not present in the training vocabulary, such as using a special OOV token or subword tokenization (e.g., Byte Pair Encoding).
+
+### Text Augmentation
+- Apply techniques to artificially increase the size of the training data by slightly altering the existing text (e.g., synonym replacement, random insertion).
+
+### Spelling Correction
+- Automatically correct spelling errors in the text.
+- Example: "Ths is a smple text" -> "This is a simple text"
+
+### Normalization of Text (e.g., URLs, Emails)
+- Normalize specific patterns in text like URLs, emails, and social media handles.
+- Example: "Check out https://www.example.com" -> "Check out URL"
+
+## Handling Domain-Specific Text
+
+### Entity Recognition and Replacement
+- Recognize and replace domain-specific entities (e.g., names, dates) with placeholder tokens.
+- Example: "John Doe was born on 01/01/2000" -> "PERSON was born on DATE"
+
+### Language-Specific Preprocessing
+- Apply preprocessing techniques specific to the language of the text, such as handling different scripts, punctuation, and stop words.
+
+These preprocessing techniques are often combined and customized based on the specific requirements of the NLP task and the nature of the text data.
+
+
+
 RNN - https://www.kdnuggets.com/comparing-natural-language-processing-techniques-rnns-transformers-bert
 
 - **Purpose and Application:**
