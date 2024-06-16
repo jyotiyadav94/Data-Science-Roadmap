@@ -115,7 +115,6 @@ Self-supervised learning has gained popularity due to its ability to leverage la
 
 
 
-
 # 1. Decision Trees 
 
 Resource - https://www.analyticsvidhya.com/blog/2021/08/decision-tree-algorithm/
@@ -309,6 +308,11 @@ Random Forest is a popular ensemble learning method used in machine learning for
 # 3. XGBoost
 
 XGBoost, short for eXtreme Gradient Boosting, is an optimized and efficient implementation of the gradient boosting machine learning algorithm. It is widely used in machine learning competitions and real-world applications due to its high performance and scalability. XGBoost is designed to be highly efficient, flexible, and customizable, making it suitable for a wide range of tasks, including classification, regression, and ranking problems.
+
+Gradient Boosting:
+
+Gradient boosting is an ensemble technique that combines the predictions of multiple weak learners (usually decision trees) to form a strong predictor.
+It builds models sequentially, with each model trying to correct the errors of the previous one.
 
 ![Alt text](<images/xgboost.png>)
 
