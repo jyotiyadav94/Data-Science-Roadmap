@@ -1,79 +1,30 @@
-# Developing an MLOps Pipeline for a Computer Vision Project
+If you are working with high dimensional vector data ,you might have experienced some of the challenges associated with storing and querying this type of data.
 
-Developing an MLOps pipeline for a computer vision project involves a series of interconnected stages designed to streamline the model lifecycle and ensure efficient deployment and maintenance.
+### Challenges with traditional database:
+- Not optimized for high-dimensional vector data
+- Slow query times
+- Difficulty handling large volumes of data
+- Use of flat files or other ad-hoc solutions can quickly become unmanageable
+- Limited support for vector similarity measures
+- Infrastructure, server setup, and maintenance required
 
-## 1. Data Management:
 
-### Data Collection:
-- Gather a diverse and representative dataset of images or videos relevant to your project.
-- Ensure proper labeling and annotation for supervised learning tasks.
+### What is Pinecone?
+Pinecone is a cloud-native vector database that provides a simple and efficient way to store, search, and retrieve high-dimensional vector data. It is built to handle large volumes of data and can scale to meet the needs of any project.
 
-### Data Versioning:
-- Track changes to your dataset to reproduce experiments and understand model performance variations.
+### Key features
 
-### Data Exploration & Preprocessing:
-- Analyze and visualize your data to gain insights.
-- Clean, normalize, and transform data as needed to improve model performance.
+- Fast vector searches in milliseconds
+- Scalable to handle large volumes of data
+- Cloud-native and fully managed service(you can focus on building your machine learning models instead of worrying about the underlying infrastructure)
+- Supports a wide range of vector data types and similarity measures
+- Python client library for easy interaction
+- Optimized for real-time applications
+- Simple and efficient way to store, search, and retrieve high-dimensional vector data.
 
-## 2. Model Development:
 
-### Experiment Tracking:
-- Use tools like MLflow or TensorBoard to track experiments, log parameters, metrics, and artifacts.
 
-### Model Training:
-- Train your computer vision model using your prepared dataset and chosen architecture (CNN, ResNet, etc.).
+# How do you handle the batch request in Flask? 
 
-### Model Validation:
-- Evaluate your model's performance on a separate validation set to assess its generalization ability.
 
-## 3. Model Deployment:
-
-### Model Registry:
-- Store your trained models in a centralized repository for version control and easy access.
-
-### Model Serving:
-- Choose a deployment strategy (online, batch, or real-time) and a serving infrastructure (Docker containers, Kubernetes, cloud services) to make your model accessible for predictions.
-
-### Monitoring:
-- Continuously track model performance in production, including metrics like accuracy, latency, and resource utilization.
-
-## 4. CI/CD Pipeline:
-
-### Continuous Integration:
-- Automate the process of building, testing, and validating your code and models after each change.
-
-### Continuous Deployment:
-- Automatically deploy updated models to production environments after successful testing.
-
-## 5. Model Monitoring and Maintenance:
-
-### Monitoring:
-- Track model performance in real-world scenarios and identify potential issues like concept drift or data quality problems.
-
-### Retraining:
-- Implement mechanisms to retrain your model periodically on new data to maintain performance.
-
-### Feedback Loop:
-- Incorporate user feedback and real-world performance data to improve your model continuously.
-
-## Tools and Technologies:
-
-### Experiment Tracking:
-- MLflow, TensorBoard, Weights & Biases
-
-### Model Registry:
-- MLflow Model Registry, Kubeflow
-
-### Model Serving:
-- TensorFlow Serving, TorchServe, Triton Inference Server, BentoML, KFServing
-
-### CI/CD:
-- Jenkins, GitLab CI/CD, GitHub Actions
-
-### Monitoring:
-- Prometheus, Grafana, Evidently AI
-
-### Cloud Platforms:
-- AWS SageMaker, Google Cloud AI Platform, Azure Machine Learning
-
-Remember, building an effective MLOps pipeline is an iterative process that requires continuous improvement and adaptation to your project's specific needs.
+# How do you handle the Concurrency? 
