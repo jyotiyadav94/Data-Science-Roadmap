@@ -1,3 +1,18 @@
+What is RAG?
+RAG stands for Retrieval Augmented Generation and is a powerful architecture for building large language models (LLMs) with improved efficiency and accuracy. It combines the strengths of two types of models:
+
+Retrieval Model: This model finds relevant documents or passages from a large database based on the input query. Think of it like a super-powered search engine that understands the meaning of your query and retrieves the most relevant information.
+Generative Model: This model analyzes the retrieved documents and uses them to generate the final output, which can be text, code, or another format. Imagine a skilled writer who reads the relevant information and then crafts a creative and informative response based on it.
+
+
+Why is RAG Important?
+Traditional LLMs generate outputs solely based on the input query, which can be limiting in several ways:
+
+Short Context Window: They can only consider a limited amount of text (around 512 tokens) at a time, which can lead to inaccurate or irrelevant outputs for complex queries.
+Memory Bottlenecks: Processing large amounts of information within the model’s memory can be computationally expensive and slow.
+Limited Knowledge Access: They are confined to the knowledge encoded within their training data, which might not be comprehensive for specific tasks.
+
+
 
 https://www.youtube.com/watch?v=sVcwVQRHIc8&t=2037s&ab_channel=freeCodeCamp.org
 
