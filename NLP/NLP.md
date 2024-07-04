@@ -93,6 +93,25 @@ Efficiency: Computationally efficient and scales well with large datasets.
 ![image](https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/cbbc8c6a-9acb-42db-8a2d-1ab7e924c1f6)
 
 
+# Differences Between Traditional Neural Networks and RNNs
+
+| Aspect                  | Traditional Neural Networks (NNs)  | Recurrent Neural Networks (RNNs)             |
+|-------------------------|------------------------------------|----------------------------------------------|
+| **Structure**           | Feedforward                        | Feedback loop within network                 |
+| **Data Flow**           | Unidirectional                     | Bidirectional                                |
+| **Memory**              | No memory of previous inputs       | Maintains memory of previous inputs          |
+| **Usage**               | Static data (e.g., images)         | Sequential data (e.g., time series, text)    |
+| **Output**              | Fixed size                         | Variable size                                |
+| **Time Dependency**     | No                                 | Yes                                          |
+| **Parameter Sharing**   | Different parameters for each layer| Same parameters across all time steps        |
+| **Complexity**          | Simpler, less computationally intense| More complex, higher computational demand    |
+| **Training**            | Gradient descent, backpropagation  | Backpropagation through time (BPTT)          |
+| **Applications**        | Image recognition, classification  | Language modeling, speech recognition        |
+| **Internal State**      | No internal state                  | Has an internal state that updates over time |
+| **Example Models**      | Multi-Layer Perceptron (MLP), Convolutional Neural Networks (CNN) | Long Short-Term Memory (LSTM), Gated Recurrent Unit (GRU) |
+
+
+
 # Recurrent Neural Networks (RNN)
 
 RNN - https://www.kdnuggets.com/comparing-natural-language-processing-techniques-rnns-transformers-bert
