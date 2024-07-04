@@ -90,6 +90,9 @@ Semantic Similarity: Captures semantic relationships between words.
 Dimensionality Reduction: Converts high-dimensional sparse vectors into dense, lower-dimensional vectors.
 Efficiency: Computationally efficient and scales well with large datasets.
 
+![image](https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/cbbc8c6a-9acb-42db-8a2d-1ab7e924c1f6)
+
+
 # Recurrent Neural Networks (RNN)
 
 RNN - https://www.kdnuggets.com/comparing-natural-language-processing-techniques-rnns-transformers-bert
