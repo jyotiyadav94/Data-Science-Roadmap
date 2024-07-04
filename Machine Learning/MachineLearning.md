@@ -183,13 +183,22 @@ A decision tree - https://www.youtube.com/watch?v=JcI5E2Ng6r4&ab_channel=Intuiti
 
 A decision tree is a supervised machine learning algorithm for that can be used for both classification and regression tasks.Decision tree algorithm is a tree-like structured classifier preferably used to solve classification and regression problems.When a decision tree classifies the values into separate categories it is called classification tree. When it predicts continuous values/numerical values it is called regression tree.
 
-It consists of nodes divided into three categories:
+Components of a Decision Tree
 
-- **Root Node:** The initial node at the beginning of a decision tree, where the entire population or dataset starts dividing based on various features or conditions.
+* **Root Node**: Represents the entire dataset, and this node is split into two or more homogeneous sets.
+* **Decision Nodes**: These are nodes where the data is split based on a feature.
+* **Leaf/Terminal Nodes**: These nodes represent the outcome or final decision.
+* **Branches**: Connect nodes and represent the decision rules or outcomes from the decision nodes.
 
-- **Decision Nodes:** Nodes resulting from the splitting of root nodes are known as decision nodes. These nodes represent intermediate decisions or conditions within the tree. Each decision node represents the possible solution to the problems.
+How Decision Trees Work
+1. **Splitting**: The process of dividing a node into two or more sub-nodes based on certain criteria.
+2. **Decision Rule**: The decision to split the nodes is made by selecting the best attribute that gives the best homogeneity. Criteria include Gini impurity, entropy, and variance reduction.
+3. **Pruning**: This process involves removing sub-nodes of a decision node. Pruning can be done to avoid overfitting. There are two types:
+        * **Pre-pruning**: Stops the tree growth early by setting conditions (e.g., maximum depth of the tree).
+        * **Post-pruning**: Removes branches from a fully grown tree that are not critical.
+4. **Stopping Criteria**: The tree can be stopped from growing based on various criteria, such as maximum depth, minimum samples per leaf, or if no further information gain is possible.
 
-- **Leaf Nodes:** Nodes where further splitting is not possible, often indicating the final classification or outcome. Leaf nodes are also referred to as terminal nodes. It is the actual output of the class label. There is no further classification of leaf node.
+
 
 It goes from root node to leaf node. But it becomes quite complicated to select the best attribute for the root node & the sub nodes. We use election techniques to solve the problem. The values are sorted and the value having a higher value is taken at the root node.
 
