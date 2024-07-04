@@ -200,40 +200,16 @@ How Decision Trees Work
 
 
 
-It goes from root node to leaf node. But it becomes quite complicated to select the best attribute for the root node & the sub nodes. We use election techniques to solve the problem. The values are sorted and the value having a higher value is taken at the root node.
-
-The few attribute election techniques are:
-
-- **Entropy** - Which is the measure of randomness in the information being processed.
-- **Information Gain** - It shows the difference between the entropy of the root node and the weighted average entropy of the decision & leaf nodes.
-- **Ginni Index** - measure of the purity and impurity while creating a decision tree.
-
 ![Alt text](<images/decsion tree.png>)
 
 ![Alt text](<images/Screenshot 2024-02-22 at 17.45.58.png>)
 
-1. **Root Node**: The initial node at the beginning of a decision tree, where the entire population or dataset starts dividing based on various features or conditions.
-
-2. **Decision Nodes**: Nodes resulting from the splitting of root nodes are known as decision nodes. These nodes represent intermediate decisions or conditions within the tree.
-
-3. **Leaf Nodes**: Nodes where further splitting is not possible, often indicating the final classification or outcome. Leaf nodes are also referred to as terminal nodes.
-
-4. **Sub-Tree**: Similar to a subsection of a graph being called a sub-graph, a sub-section of a decision tree is referred to as a sub-tree. It represents a specific portion of the decision tree.
-
-5. **Pruning**: The process of removing or cutting down specific nodes in a decision tree to prevent overfitting and simplify the model.
-
-6. **Branch / Sub-Tree**: A subsection of the entire decision tree is referred to as a branch or sub-tree. It represents a specific path of decisions and outcomes within the tree.
-
-7. **Parent and Child Node**: In a decision tree, a node that is divided into sub-nodes is known as a parent node, and the sub-nodes emerging from it are referred to as child nodes. The parent node represents a decision or condition, while the child nodes represent the potential outcomes or further decisions based on that condition.
-
 ### Learning Process:
 The learning process of a decision tree involves finding the optimal splits for partitioning the data at each node. This is typically done using a criterion such as Gini impurity or information gain for classification tasks, or mean squared error for regression tasks.
 
-* Gini Impurity: Measures the probability of incorrectly classifying a randomly chosen element if it were randomly labeled according to the class distribution in the node.
-
-* Information Gain: Measures the reduction in entropy or uncertainty achieved by splitting the data based on a specific feature
-
-An attribute with a low Gini index is preferred over the high Gini index.
+* Entrophy : Entropy is a measure of the uncertainty or impurity in a dataset. It quantifies the amount of disorder or randomness. In the context of decision trees, it is used to determine the homogeneity of a sample.
+* Information Gain: Information gain measures the reduction in entropy or impurity before and after a dataset is split on an attribute. It helps to identify which attribute provides the most significant reduction in uncertainty. ﻿
+* Gini Impurity: Gini impurity is another measure of impurity or disorder in a dataset. It calculates the probability of incorrectly classifying a randomly chosen element if it was labeled according to the distribution of labels in the subset. 
 
 
 ### Advantages of Decision Trees
@@ -263,48 +239,6 @@ An attribute with a low Gini index is preferred over the high Gini index.
 - **Bias towards Features with Many Levels:** Features with many levels are favored in the construction of decision trees, which can lead to biased splits and potentially overlook important but less represented features.
 
 - **Limited Expressiveness:** Decision trees may not capture complex relationships between features in the data, leading to suboptimal performance on tasks with intricate patterns.
-
-
-
-### How it works with an Example? 
-
-Suppose we have a dataset of animals with features like whether they have feathers, lay eggs, and can fly. We also have the target variable indicating whether the animal is a bird or not. Here's a small portion of our dataset:
-
-| Feathers | Lay Eggs | Can Fly | Is Bird? |
-|----------|----------|---------|----------|
-| Yes      | Yes      | Yes     | Yes      |
-| Yes      | Yes      | No      | No       |
-| No       | Yes      | No      | No       |
-| Yes      | No       | Yes     | Yes      |
-| No       | Yes      | No      | No       |
-| No       | No       | No      | No       |
-| Yes      | Yes      | Yes     | Yes      |
-| Yes      | Yes      | Yes     | Yes      |
-
-We want to build a decision tree to predict whether an animal is a bird based on its features.
-
-1. **Root Node**: We start by choosing the best feature to split the dataset at the root node. We use a metric like Information Gain to evaluate the effectiveness of each feature. Let's say we choose "Can Fly" as the root node because it has the highest Information Gain.
-
-2. **Decision Nodes**: The "Can Fly" node splits the dataset into two branches: animals that can fly and animals that cannot. Each branch leads to a decision node.
-
-3. **Leaf Nodes**: At the decision nodes, we continue splitting the dataset based on other features. For example, the branch with animals that can fly might further split based on whether they have feathers. This process continues until we reach leaf nodes where no further splitting is possible.
-
-The decision tree might look like this:
-
-```
-        Can Fly?
-       /         \
-  Yes /           \ No
-     /             \
- Feathers?         No
-  /    \
- Yes   No
-  |     |
- Bird   Not Bird
-```
-Now, if we want to classify a new animal, we start at the root node and follow the branches based on its features. For example, if the animal has feathers, does not lay eggs, and cannot fly, we would classify it as "Not Bird" based on the decision tree.
-
-This is a simplified example, but it illustrates the basic concept of how decision trees work by recursively splitting the dataset based on features to make predictions.
 
 
 # 2. Random Forest
