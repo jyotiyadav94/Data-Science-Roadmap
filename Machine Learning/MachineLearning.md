@@ -112,6 +112,64 @@ Self-supervised learning has gained popularity due to its ability to leverage la
 
 ![Self-Supervised Learning Image](images/image.png)
 
+## Underfitting and Overfitting
+
+Underfitting and overfitting are two common problems in machine learning that relate to the model's performance on training data versus unseen data. They occur when a model is either too simple or too complex, respectively.
+
+## Underfitting
+
+**Definition:** Underfitting happens when a model is too simple to capture the underlying structure of the data. It performs poorly on both the training set and the test set.
+
+### Causes:
+- **Too Simple Model:** Using a linear model to fit non-linear data.
+- **Insufficient Features:** Not including enough features that capture the relevant information.
+- **High Bias:** The model makes strong assumptions about the data, leading to high bias and low variance.
+
+### Symptoms:
+- High training error.
+- High test error.
+- Poor model performance on both known and new data.
+
+### Solution:
+- Use a more complex model (e.g., adding polynomial features).
+- Include more relevant features.
+- Reduce regularization (if applicable).
+
+## Overfitting
+
+**Definition:** Overfitting occurs when a model is too complex and learns not only the underlying structure but also the noise in the training data. It performs well on the training set but poorly on the test set.
+
+### Causes:
+- **Too Complex Model:** Using a very flexible model with many parameters.
+- **Too Many Features:** Including too many irrelevant features.
+- **Low Bias:** The model makes fewer assumptions about the data, leading to low bias and high variance.
+
+### Symptoms:
+- Low training error.
+- High test error.
+- Poor generalization to new data.
+
+### Solution:
+- Use a simpler model.
+- Apply regularization techniques (e.g., L1 or L2 regularization).
+- Use cross-validation to tune hyperparameters.
+- Reduce the number of features by feature selection or dimensionality reduction.
+
+## Visual Representation
+
+### Underfitting:
+Imagine trying to fit a straight line (linear model) through a set of points that form a quadratic pattern. The line will not capture the curve, resulting in poor fit and high errors.
+
+### Overfitting:
+Imagine fitting a high-degree polynomial through the same set of quadratic points. The polynomial will likely pass through all the points, including any noise, resulting in a model that performs perfectly on training data but poorly on unseen data.
+
+## Bias-Variance Tradeoff
+
+Both underfitting and overfitting can be understood in the context of the bias-variance tradeoff:
+- **High Bias (Underfitting):** The model is too simple and does not capture the underlying patterns in the data.
+- **High Variance (Overfitting):** The model is too complex and captures noise as well as the underlying patterns.
+
+The goal is to find a balance where the model has low bias and low variance, achieving good performance on both the training and test sets.
 
 
 
