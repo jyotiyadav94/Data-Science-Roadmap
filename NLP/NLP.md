@@ -97,7 +97,8 @@ Efficiency: Computationally efficient and scales well with large datasets.
 
 | Aspect                  | Traditional Neural Networks (NNs)  | Recurrent Neural Networks (RNNs)             |
 |-------------------------|------------------------------------|----------------------------------------------|
-| **Structure**           | Feedforward                        | Feedback loop within network                 |
+| **Structure**           | Feedforward                        | Feedback loop within network  (RNNs would consider the current and previous data input when processing this information)
+|
 | **Data Flow**           | Unidirectional                     | Bidirectional                                |
 | **Memory**              | No memory of previous inputs       | Maintains memory of previous inputs          |
 | **Usage**               | Static data (e.g., images)         | Sequential data (e.g., time series, text)    |
