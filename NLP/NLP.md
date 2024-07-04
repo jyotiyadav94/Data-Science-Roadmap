@@ -111,7 +111,6 @@ Efficiency: Computationally efficient and scales well with large datasets.
 | **Example Models**      | Multi-Layer Perceptron (MLP), Convolutional Neural Networks (CNN) | Long Short-Term Memory (LSTM), Gated Recurrent Unit (GRU) |
 
 
-
 # Recurrent Neural Networks (RNN)
 
 RNN - https://www.kdnuggets.com/comparing-natural-language-processing-techniques-rnns-transformers-bert
@@ -144,7 +143,8 @@ RNNs model implements a loop cycle during the information processing. RNNs would
 
 Looking at the RNNs more in-depth on the textual data, there are many types of RNNs. For example, the below image is the many-to-many types.
 
-![Alt text](</images/many-to-mant RNNs.png>)
+![image](https://github.com/jyotiyadav94/Data-Science-Roadmap/assets/72126242/1077b939-9544-4910-abf1-5591c32cceca)
+
 
 Another RNN type used in many NLP applications is the encoder-decoder type (Sequence-to-Sequence). The structure is shown in the image below.
 
