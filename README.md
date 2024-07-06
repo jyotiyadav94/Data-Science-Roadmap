@@ -1,4 +1,4 @@
-# Data Science and Data Engineering Roadmap:
+# Data Science Roadmap:
 
 ## 1. Programming Languages:
    - **Python:** 
